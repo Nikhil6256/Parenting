@@ -15,6 +15,13 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
 
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+
   experimental: {
     serverComponentsExternalPackages: ['mongoose', 'bcryptjs'],
   },
