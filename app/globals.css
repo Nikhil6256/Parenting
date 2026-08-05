@@ -1,0 +1,252 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Google Fonts are now loaded via <link> in layout.tsx for non-blocking preload */
+
+:root {
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-playfair: 'Playfair Display', Georgia, serif;
+}
+
+@layer base {
+  * {
+    @apply border-sage-100;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Prevent text size adjustment on orientation change */
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-white text-sage-900 antialiased;
+    font-family: var(--font-inter);
+    /* Improve rendering performance */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeSpeed;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-playfair);
+    @apply font-semibold;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-sage-50;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-sage-300 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-sage-400;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-sage-500 hover:bg-sage-600 text-white font-semibold rounded-xl shadow-soft hover:shadow-soft-lg hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-sage-500 focus:ring-offset-2;
+    transition: background-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+    will-change: transform;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-sage-500 text-sage-600 hover:bg-sage-500 hover:text-white font-semibold rounded-xl focus:outline-none focus:ring-2 focus:ring-sage-500 focus:ring-offset-2;
+    transition: background-color 150ms ease, color 150ms ease;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 text-sage-700 hover:bg-sage-50 font-medium rounded-lg;
+    transition: background-color 120ms ease;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-lg;
+    transition: background-color 150ms ease;
+  }
+
+  .card {
+    @apply bg-white rounded-xl3 shadow-card border border-sage-50 overflow-hidden;
+    transition: box-shadow 200ms ease, transform 200ms ease;
+  }
+
+  .card-hover {
+    @apply hover:shadow-card-hover hover:-translate-y-1;
+    will-change: transform;
+  }
+
+  .input {
+    @apply w-full px-4 py-3 bg-white border border-sage-200 rounded-xl text-sage-900 placeholder-sage-400 focus:outline-none focus:ring-2 focus:ring-sage-400 focus:border-transparent;
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-sage-700 mb-1.5;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .badge-green {
+    @apply bg-sage-100 text-sage-700;
+  }
+
+  .badge-yellow {
+    @apply bg-beige-100 text-beige-700;
+  }
+
+  .badge-red {
+    @apply bg-red-100 text-red-700;
+  }
+
+  .badge-blue {
+    @apply bg-mist-100 text-mist-700;
+  }
+
+  .section {
+    @apply py-16 md:py-24 px-4;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-sage-900 leading-tight;
+    font-family: var(--font-playfair);
+  }
+
+  .section-subtitle {
+    @apply text-lg text-sage-600 leading-relaxed mt-4 max-w-2xl;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-sage-600 to-sage-400 bg-clip-text text-transparent;
+  }
+
+  .glass {
+    @apply bg-white/80 backdrop-blur-md border border-white/50;
+  }
+
+  /* Admin sidebar */
+  .admin-nav-item {
+    @apply flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium cursor-pointer;
+    transition: background-color 150ms ease, color 150ms ease;
+  }
+
+  .admin-nav-item-active {
+    @apply bg-sage-500 text-white shadow-soft;
+  }
+
+  .admin-nav-item-inactive {
+    @apply text-slate-600 hover:bg-sage-50 hover:text-sage-700;
+  }
+
+  /* Table styles */
+  .table-container {
+    @apply overflow-x-auto rounded-xl border border-sage-100;
+  }
+
+  .table {
+    @apply w-full text-sm text-left;
+  }
+
+  .table thead {
+    @apply bg-sage-50 text-sage-700 uppercase text-xs tracking-wider;
+  }
+
+  .table th {
+    @apply px-6 py-4 font-semibold;
+  }
+
+  .table td {
+    @apply px-6 py-4 border-t border-sage-50;
+  }
+
+  .table tr:hover td {
+    @apply bg-sage-50/50;
+  }
+}
+
+/* GPU-composited animations — use transform+opacity only, never blur/filter inside keyframes */
+.animate-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.slide-in {
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+/* Reduce blob animation cost — scale instead of blur changes */
+.blob-anim {
+  will-change: transform;
+  transform: translateZ(0);
+  animation: blobFloat 8s ease-in-out infinite;
+}
+
+@keyframes blobFloat {
+  0%, 100% { transform: translateZ(0) translateY(0px) scale(1); }
+  50%       { transform: translateZ(0) translateY(-16px) scale(1.04); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Prose for blog content */
+.prose-custom {
+  @apply text-sage-800 leading-relaxed;
+}
+
+.prose-custom h2 {
+  @apply text-2xl font-bold text-sage-900 mt-8 mb-4;
+}
+
+.prose-custom h3 {
+  @apply text-xl font-semibold text-sage-800 mt-6 mb-3;
+}
+
+.prose-custom p {
+  @apply mb-4;
+}
+
+.prose-custom ul {
+  @apply list-disc list-inside mb-4 space-y-1;
+}
+
+.prose-custom strong {
+  @apply font-semibold text-sage-900;
+}
+
+.prose-custom blockquote {
+  @apply border-l-4 border-sage-400 pl-4 italic text-sage-600 my-6;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .blob-anim {
+    animation: none;
+  }
+}
