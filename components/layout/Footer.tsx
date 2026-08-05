@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Leaf, Mail, Phone, MapPin, Heart, Share2, MessageCircle, Video, Send } from 'lucide-react';
 
 const footerLinks = {
@@ -32,6 +33,9 @@ const socials = [
 ];
 
 export default function Footer() {
+  const pathname = usePathname();
+  if (pathname?.startsWith('/admin')) return null;
+
   return (
     <footer className="bg-sage-900 text-sage-200">
       {/* Main footer */}

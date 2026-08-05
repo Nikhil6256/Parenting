@@ -24,6 +24,8 @@ export default function Navbar() {
   const { data: session } = useSession();
   const pathname = usePathname();
 
+  if (pathname?.startsWith('/admin')) return null;
+
   useEffect(() => {
     let rafId: number;
     const handleScroll = () => {

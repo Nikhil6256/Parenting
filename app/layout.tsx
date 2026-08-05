@@ -3,6 +3,9 @@ import './globals.css';
 import { Toaster } from 'react-hot-toast';
 import SessionWrapper from '@/components/SessionWrapper';
 
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
+
 export const metadata: Metadata = {
   title: {
     default: 'Rise With Rupali — Parenting Coach & Online Courses',
@@ -41,7 +44,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body suppressHydrationWarning>
         <SessionWrapper>
-          {children}
+          <Navbar />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
           <Toaster
             position="top-center"
             toastOptions={{
