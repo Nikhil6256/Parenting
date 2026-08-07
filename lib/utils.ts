@@ -50,19 +50,25 @@ export function formatDuration(minutes: number) {
 
 /**
  * Automatically converts any Bunny.net play URL or video GUID into a responsive iframe embed URL.
- * Example: https://player.mediadelivery.net/play/716980/7b97e007-a52c-4597-83df-e64e4fd45319
+ * Example: https://player.mediadelivery.net/embed/716980/7b97e007-a52c-4597-83df-e64e4fd45319
  * Converted to: https://iframe.mediadelivery.net/embed/716980/7b97e007-a52c-4597-83df-e64e4fd45319
  */
 export function formatBunnyVideoUrl(url: string, defaultLibraryId?: string): string {
   if (!url || typeof url !== 'string') return '';
-  const trimmed = url.trim();
+  let trimmed = url.trim();
   if (!trimmed) return '';
 
-  if (trimmed.includes('player.mediadelivery.net/play/')) {
-    return trimmed.replace('player.mediadelivery.net/play/', 'iframe.mediadelivery.net/embed/');
+  // Always replace player.mediadelivery.net -> iframe.mediadelivery.net
+  if (trimmed.includes('player.mediadelivery.net')) {
+    trimmed = trimmed.replace('player.mediadelivery.net', 'iframe.mediadelivery.net');
   }
 
-  if (trimmed.includes('/embed/')) {
+  // Ensure /play/ is replaced with /embed/
+  if (trimmed.includes('/play/')) {
+    trimmed = trimmed.replace('/play/', '/embed/');
+  }
+
+  if (trimmed.includes('iframe.mediadelivery.net')) {
     return trimmed;
   }
 

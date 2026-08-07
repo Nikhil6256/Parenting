@@ -5,6 +5,7 @@ import CourseSidebar from '@/components/courses/CourseSidebar';
 import type { CourseType, LessonType } from '@/types';
 import { Play, FileText, ChevronLeft, ChevronRight, PanelLeftClose, PanelLeftOpen, Home } from 'lucide-react';
 import Link from 'next/link';
+import { formatBunnyVideoUrl } from '@/lib/utils';
 
 export default function CoursePlayerClient({ course }: { course: CourseType }) {
   const allLessons = course.curriculum.flatMap(m => m.lessons);
@@ -91,7 +92,7 @@ export default function CoursePlayerClient({ course }: { course: CourseType }) {
             {activeLesson?.videoUrl ? (
               <iframe
                 key={activeLesson.videoUrl}
-                src={activeLesson.videoUrl}
+                src={formatBunnyVideoUrl(activeLesson.videoUrl)}
                 className="w-full h-full"
                 allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen"
                 allowFullScreen
