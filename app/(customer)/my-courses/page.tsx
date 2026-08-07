@@ -16,16 +16,23 @@ export default async function MyCoursesPage() {
   }
 
   await dbConnect();
-  const user = await User.findById(session.user.id)
-    .populate({
-      path: 'purchasedCourses',
-      model: Course,
-      select: 'title slug shortDescription thumbnail category price enrolledCount totalLessons level',
-    })
-    .lean();
 
-  const rawPurchased = (user as any)?.purchasedCourses || [];
-  const purchased: CourseType[] = JSON.parse(JSON.stringify(rawPurchased));
+  let purchased: CourseType[] = [];
+  try {
+    const user = await User.findById(session.user.id)
+      .populate({
+        path: 'purchasedCourses',
+        model: Course,
+        select: 'title slug shortDescription thumbnail category price enrolledCount totalLessons level',
+      })
+      .lean();
+
+    const rawPurchased = ((user as any)?.purchasedCourses || []).filter((c: any) => c && typeof c === 'object' && c._id);
+    purchased = JSON.parse(JSON.stringify(rawPurchased));
+  } catch (error) {
+    console.error('MyCoursesPage error:', error);
+    purchased = [];
+  }
 
   return (
     <div className="p-6 md:p-8 max-w-5xl">

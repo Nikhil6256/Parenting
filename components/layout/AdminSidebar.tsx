@@ -22,6 +22,7 @@ export default function AdminSidebar() {
   const [collapsed, setCollapsed] = useState(false);
 
   const isActive = (href: string, exact: boolean = false) => {
+    if (!pathname) return false;
     if (exact) return pathname === href;
     return pathname.startsWith(href);
   };

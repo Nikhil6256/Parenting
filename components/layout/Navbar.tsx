@@ -24,11 +24,7 @@ export default function Navbar() {
   const { data: session } = useSession();
   const pathname = usePathname();
 
-  if (pathname?.startsWith('/admin')) return null;
-  // Hide main navbar inside the immersive course player and checkout pages
-  if (pathname?.match(/^\/my-courses\/.+/)) return null;
-  if (pathname?.startsWith('/checkout')) return null;
-
+  // All hooks MUST be called before any conditional returns (React rules of hooks)
   useEffect(() => {
     let rafId: number;
     const handleScroll = () => {
@@ -43,6 +39,11 @@ export default function Navbar() {
       cancelAnimationFrame(rafId);
     };
   }, []);
+
+  // Hide navbar on immersive pages (AFTER all hooks)
+  if (pathname?.startsWith('/admin')) return null;
+  if (pathname?.match(/^\/my-courses\/.+/)) return null;
+  if (pathname?.startsWith('/checkout')) return null;
 
   return (
     <nav

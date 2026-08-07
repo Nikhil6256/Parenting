@@ -48,7 +48,7 @@ export default function CustomerSidebar() {
         {/* Nav */}
         <nav className="flex-1 px-3 py-4 space-y-1">
           {navItems.map((item) => {
-            const active = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
+            const active = pathname ? (pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href))) : false;
             return (
               <Link
                 key={item.href}
@@ -78,7 +78,7 @@ export default function CustomerSidebar() {
       <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-sage-100 shadow-[0_-4px_24px_rgba(0,0,0,0.06)] px-2 py-2">
         <div className="flex items-center justify-around">
           {navItems.slice(0, 3).map((item) => {
-            const active = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
+            const active = pathname ? (pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href))) : false;
             return (
               <Link
                 key={item.href}
