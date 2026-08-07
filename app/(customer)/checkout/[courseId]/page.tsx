@@ -60,7 +60,7 @@ export default function CheckoutPage({ params }: Props) {
       if (!res.ok) {
         if (res.status === 409) {
           toast.success('You already own this course!');
-          router.push('/my-courses');
+          router.push(`/my-courses/${params.courseId}`);
           return;
         }
         toast.error(orderData.error || 'Failed to initiate payment');

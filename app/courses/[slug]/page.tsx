@@ -1,5 +1,8 @@
 import dbConnect from '@/lib/mongoose';
 import Course from '@/models/Course';
+import User from '@/models/User';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/lib/auth';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { formatPrice, formatDate } from '@/lib/utils';
@@ -24,6 +27,14 @@ export default async function CourseDetailPage({ params }: Props) {
   await dbConnect();
   const course = await Course.findOne({ slug: params.slug, status: 'published' }).lean() as CourseType;
   if (!course) notFound();
+
+  const session = await getServerSession(authOptions);
+  let isEnrolled = false;
+  if (session?.user?.id) {
+    const user = await User.findById(session.user.id).select('purchasedCourses').lean();
+    const purchased = (user as any)?.purchasedCourses?.map((id: any) => id.toString()) || [];
+    isEnrolled = purchased.includes(course._id.toString());
+  }
 
   const c = JSON.parse(JSON.stringify(course));
   const totalLessons = c.curriculum.reduce((a: number, m: any) => a + (m.lessons?.length || 0), 0);
@@ -61,7 +72,7 @@ export default async function CourseDetailPage({ params }: Props) {
                 ) : (
                   <div className="w-full h-48 bg-gradient-to-br from-sage-100 to-sage-200 rounded-xl mb-5 flex items-center justify-center text-6xl">📚</div>
                 )}
-                <PricingBlock course={c} />
+                <PricingBlock course={c} isEnrolled={isEnrolled} />
               </div>
             </div>
           </div>
@@ -131,14 +142,14 @@ export default async function CourseDetailPage({ params }: Props) {
             {/* Sticky purchase card — mobile/tablet */}
             <div className="lg:hidden">
               <div className="card p-6">
-                <PricingBlock course={c} />
+                <PricingBlock course={c} isEnrolled={isEnrolled} />
               </div>
             </div>
 
             {/* Sidebar purchase card — desktop (sticky) */}
             <div className="hidden lg:block">
               <div className="card p-6 sticky top-24 space-y-4">
-                <PricingBlock course={c} />
+                <PricingBlock course={c} isEnrolled={isEnrolled} />
                 <div className="pt-4 border-t border-sage-50 space-y-2 text-xs text-slate-500">
                   <p className="flex items-center gap-2"><CheckCircle className="w-3.5 h-3.5 text-sage-500" /> Lifetime access</p>
                   <p className="flex items-center gap-2"><CheckCircle className="w-3.5 h-3.5 text-sage-500" /> Watch on any device</p>
@@ -154,24 +165,31 @@ export default async function CourseDetailPage({ params }: Props) {
   );
 }
 
-function PricingBlock({ course }: { course: any }) {
+function PricingBlock({ course, isEnrolled }: { course: any; isEnrolled?: boolean }) {
   return (
     <div>
-      <div className="flex items-center gap-3 mb-4">
-        {course.discountPrice ? (
-          <>
-            <span className="text-3xl font-bold text-sage-700">{formatPrice(course.discountPrice)}</span>
-            <span className="text-lg text-slate-400 line-through">{formatPrice(course.price)}</span>
-            <span className="badge bg-red-100 text-red-700">
-              {Math.round(((course.price - course.discountPrice) / course.price) * 100)}% OFF
-            </span>
-          </>
-        ) : (
-          <span className="text-3xl font-bold text-sage-700">{formatPrice(course.price)}</span>
-        )}
-      </div>
-      <BuyButton courseId={course._id} courseSlug={course.slug} />
-      <p className="text-xs text-center text-slate-400 mt-3">Secure payment via Razorpay</p>
+      {isEnrolled ? (
+        <div className="mb-4 p-3 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-800 text-sm font-semibold flex items-center gap-2 justify-center">
+          <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+          You already own this course!
+        </div>
+      ) : (
+        <div className="flex items-center gap-3 mb-4">
+          {course.discountPrice ? (
+            <>
+              <span className="text-3xl font-bold text-sage-700">{formatPrice(course.discountPrice)}</span>
+              <span className="text-lg text-slate-400 line-through">{formatPrice(course.price)}</span>
+              <span className="badge bg-red-100 text-red-700">
+                {Math.round(((course.price - course.discountPrice) / course.price) * 100)}% OFF
+              </span>
+            </>
+          ) : (
+            <span className="text-3xl font-bold text-sage-700">{formatPrice(course.price)}</span>
+          )}
+        </div>
+      )}
+      <BuyButton courseId={course._id} courseSlug={course.slug} isEnrolled={isEnrolled} />
+      {!isEnrolled && <p className="text-xs text-center text-slate-400 mt-3">Secure payment via Razorpay</p>}
     </div>
   );
 }
