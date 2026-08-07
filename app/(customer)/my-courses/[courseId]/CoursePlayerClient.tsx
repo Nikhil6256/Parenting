@@ -95,6 +95,7 @@ export default function CoursePlayerClient({ course }: { course: CourseType }) {
                 className="w-full h-full"
                 allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen"
                 allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
                 title={activeLesson.title}
                 style={{ border: 'none', display: 'block' }}
               />
