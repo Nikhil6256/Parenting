@@ -9,7 +9,7 @@ import { z } from 'zod';
 const updateSchema = z.object({
   name: z.string().min(2),
   currentPassword: z.string().optional(),
-  newPassword: z.string().min(6).optional(),
+  newPassword: z.string().min(6).optional().or(z.literal('')),
 });
 
 export async function PUT(req: NextRequest) {

@@ -24,7 +24,8 @@ export default async function MyCoursesPage() {
     })
     .lean();
 
-  const purchased = ((user as any)?.purchasedCourses || []) as CourseType[];
+  const rawPurchased = (user as any)?.purchasedCourses || [];
+  const purchased: CourseType[] = JSON.parse(JSON.stringify(rawPurchased));
 
   return (
     <div className="p-6 md:p-8 max-w-5xl">

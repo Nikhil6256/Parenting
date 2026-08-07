@@ -35,6 +35,8 @@ const socials = [
 export default function Footer() {
   const pathname = usePathname();
   if (pathname?.startsWith('/admin')) return null;
+  if (pathname?.match(/^\/my-courses\/.+/)) return null;
+  if (pathname?.startsWith('/checkout')) return null;
 
   return (
     <footer className="bg-sage-900 text-sage-200">
