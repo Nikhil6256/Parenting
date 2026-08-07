@@ -8,12 +8,33 @@ import Link from 'next/link';
 
 export default function CoursePlayerClient({ course }: { course: CourseType }) {
   const allLessons = course.curriculum.flatMap(m => m.lessons);
-  const [activeLesson, setActiveLesson] = useState<LessonType>(allLessons[0]);
+  const [activeLesson, setActiveLesson] = useState<LessonType | null>(allLessons[0] ?? null);
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
-  const currentIndex = allLessons.findIndex(l => l._id === activeLesson?._id || l.title === activeLesson?.title);
+  const currentIndex = activeLesson
+    ? allLessons.findIndex(l => l._id === activeLesson._id || l.title === activeLesson.title)
+    : -1;
   const prev = currentIndex > 0 ? allLessons[currentIndex - 1] : null;
   const next = currentIndex < allLessons.length - 1 ? allLessons[currentIndex + 1] : null;
+
+  // Empty course guard — show a friendly message instead of crashing
+  if (allLessons.length === 0) {
+    return (
+      <div className="fixed inset-0 flex flex-col items-center justify-center bg-slate-900 z-30">
+        <div className="text-center px-6">
+          <div className="w-20 h-20 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-6">
+            <Play className="w-8 h-8 text-white/30 ml-1" />
+          </div>
+          <h2 className="text-xl font-bold text-white mb-2">No lessons yet</h2>
+          <p className="text-white/50 text-sm mb-6">This course doesn&apos;t have any lessons added yet. Check back soon!</p>
+          <Link href="/my-courses" className="inline-flex items-center gap-2 bg-sage-500 hover:bg-sage-600 text-white font-medium px-5 py-2.5 rounded-xl transition-colors text-sm">
+            <Home className="w-4 h-4" /> Back to My Courses
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
 
   return (
     // Use fixed full-viewport layout so it doesn't inherit the root layout padding

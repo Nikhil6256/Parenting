@@ -4,6 +4,7 @@ import dbConnect from '@/lib/mongoose';
 import User from '@/models/User';
 import Course from '@/models/Course';
 import { notFound, redirect } from 'next/navigation';
+import mongoose from 'mongoose';
 import CoursePlayerClient from './CoursePlayerClient';
 
 interface Props { params: { courseId: string } }
@@ -13,6 +14,11 @@ export default async function CoursePlayerPage({ params }: Props) {
 
   if (!session?.user?.id) {
     redirect('/login');
+  }
+
+  // Validate that courseId is a valid ObjectId before hitting MongoDB
+  if (!mongoose.Types.ObjectId.isValid(params.courseId)) {
+    return notFound();
   }
 
   await dbConnect();
@@ -25,10 +31,17 @@ export default async function CoursePlayerPage({ params }: Props) {
     redirect(`/courses`);
   }
 
-  const course = await Course.findById(params.courseId).lean();
+  let course;
+  try {
+    course = await Course.findById(params.courseId).lean();
+  } catch {
+    return notFound();
+  }
+
   if (!course) return notFound();
 
   const courseData = JSON.parse(JSON.stringify(course));
 
   return <CoursePlayerClient course={courseData} />;
 }
+
