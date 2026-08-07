@@ -55,7 +55,7 @@ const nextConfig = {
               // img-src: allow any HTTPS source (admin-managed content)
               "img-src 'self' data: blob: https:",
               "connect-src 'self' https://accounts.google.com https://api.razorpay.com",
-              "frame-src https://api.razorpay.com",
+              "frame-src https://api.razorpay.com https://iframe.mediadelivery.net https://www.youtube.com https://player.vimeo.com",
               "frame-ancestors 'none'",
               "base-uri 'self'",
               "form-action 'self'",

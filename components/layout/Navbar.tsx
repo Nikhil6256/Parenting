@@ -25,6 +25,9 @@ export default function Navbar() {
   const pathname = usePathname();
 
   if (pathname?.startsWith('/admin')) return null;
+  // Hide main navbar inside the immersive course player and checkout pages
+  if (pathname?.match(/^\/my-courses\/.+/)) return null;
+  if (pathname?.startsWith('/checkout')) return null;
 
   useEffect(() => {
     let rafId: number;
