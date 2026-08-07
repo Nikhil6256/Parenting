@@ -103,6 +103,7 @@ export async function POST(req: NextRequest) {
     if (error.code === 11000) {
       return NextResponse.json({ error: 'A course with this title already exists' }, { status: 409 });
     }
-    return NextResponse.json({ error: 'Failed to create course' }, { status: 500 });
+    console.error('Course create error:', error);
+    return NextResponse.json({ error: error?.message || 'Failed to create course' }, { status: 500 });
   }
 }

@@ -80,8 +80,9 @@ export async function PUT(req: NextRequest, { params }: { params: { slug: string
 
     if (!course) return NextResponse.json({ error: 'Course not found' }, { status: 404 });
     return NextResponse.json({ course: JSON.parse(JSON.stringify(course)) });
-  } catch {
-    return NextResponse.json({ error: 'Failed to update course' }, { status: 500 });
+  } catch (error: any) {
+    console.error('Course update error:', error);
+    return NextResponse.json({ error: error?.message || 'Failed to update course' }, { status: 500 });
   }
 }
 
@@ -97,7 +98,8 @@ export async function DELETE(req: NextRequest, { params }: { params: { slug: str
     if (!course) return NextResponse.json({ error: 'Course not found' }, { status: 404 });
 
     return NextResponse.json({ message: 'Course deleted successfully' });
-  } catch {
-    return NextResponse.json({ error: 'Failed to delete course' }, { status: 500 });
+  } catch (error: any) {
+    console.error('Course delete error:', error);
+    return NextResponse.json({ error: error?.message || 'Failed to delete course' }, { status: 500 });
   }
 }

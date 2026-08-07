@@ -54,11 +54,11 @@ const CourseSchema = new Schema<ICourse>(
     title: { type: String, required: true, trim: true },
     slug: { type: String, required: true, unique: true, lowercase: true },
     description: { type: String, required: true },
-    shortDescription: { type: String, required: true, maxlength: 200 },
+    shortDescription: { type: String, required: true, maxlength: 300 },
     curriculum: [ModuleSchema],
     price: { type: Number, required: true, min: 0 },
     discountPrice: { type: Number },
-    thumbnail: { type: String, required: true },
+    thumbnail: { type: String, default: '' },
     category: {
       type: String,
       required: true,
