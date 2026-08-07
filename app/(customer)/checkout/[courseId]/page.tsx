@@ -64,6 +64,7 @@ export default function CheckoutPage({ params }: Props) {
           return;
         }
         toast.error(orderData.error || 'Failed to initiate payment');
+        setPaying(false); // ← unfreeze button on order creation failure
         return;
       }
 
@@ -98,13 +99,14 @@ export default function CheckoutPage({ params }: Props) {
             toast.success('Payment successful! 🎉');
             setTimeout(() => router.push('/my-courses'), 2000);
           } else {
+            setPaying(false); // ← unfreeze on verify failure
             toast.error(verifyData.error || 'Payment verification failed');
           }
         },
         modal: {
           ondismiss: () => {
             setPaying(false);
-            toast.error('Payment cancelled');
+            toast('Payment cancelled', { icon: '❌' });
           },
         },
       });

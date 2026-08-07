@@ -4,7 +4,7 @@ import { authOptions } from '@/lib/auth';
 import dbConnect from '@/lib/mongoose';
 import Course from '@/models/Course';
 import Order from '@/models/Order';
-import razorpay from '@/lib/razorpay';
+import getRazorpay from '@/lib/razorpay';
 
 export async function POST(req: NextRequest) {
   try {
@@ -36,9 +36,10 @@ export async function POST(req: NextRequest) {
     }
 
     const amount = course.discountPrice || course.price;
-    const amountInPaise = amount * 100;
+    const amountInPaise = Math.round(amount * 100);
 
-    // Create Razorpay order server-side
+    // Create Razorpay order server-side (lazy init picks up env vars at runtime)
+    const razorpay = getRazorpay();
     const razorpayOrder = await razorpay.orders.create({
       amount: amountInPaise,
       currency: 'INR',
@@ -67,8 +68,14 @@ export async function POST(req: NextRequest) {
       courseTitle: course.title,
       keyId: process.env.RAZORPAY_KEY_ID,
     });
-  } catch (error) {
+  } catch (error: any) {
     console.error('Order creation error:', error);
-    return NextResponse.json({ error: 'Failed to create order' }, { status: 500 });
+    // Surface Razorpay-specific error descriptions to help debug
+    const message =
+      error?.error?.description ||   // Razorpay API error shape
+      error?.message ||
+      'Failed to create order';
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }
+
