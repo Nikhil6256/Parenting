@@ -6,8 +6,9 @@ import { useSession, signOut } from 'next-auth/react';
 import { usePathname } from 'next/navigation';
 import {
   Menu, X, ChevronDown, BookOpen, User, LogOut,
-  LayoutDashboard, ShoppingBag, Leaf
+  LayoutDashboard, ShoppingBag
 } from 'lucide-react';
+import LogoIcon from '@/components/common/LogoIcon';
 
 const navLinks = [
   { href: '/', label: 'मुख्यपृष्ठ' },
@@ -58,7 +59,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
             <div className="w-9 h-9 bg-sage-gradient rounded-xl flex items-center justify-center shadow-soft group-hover:shadow-soft-lg transition-all duration-300">
-              <Leaf className="w-5 h-5 text-white" />
+              <LogoIcon className="w-5.5 h-5.5 text-white" />
             </div>
             <div>
               <span className="text-lg font-bold text-sage-800" style={{ fontFamily: 'var(--font-playfair)' }}>

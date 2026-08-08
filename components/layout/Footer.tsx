@@ -2,7 +2,8 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Leaf, Mail, Phone, MapPin, Heart, Share2, MessageCircle, Video, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Heart, Share2, MessageCircle, Video, Send } from 'lucide-react';
+import LogoIcon from '@/components/common/LogoIcon';
 
 const footerLinks = {
   'मुख्य दुवे': [
@@ -47,7 +48,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2.5 mb-4">
               <div className="w-9 h-9 bg-sage-500 rounded-xl flex items-center justify-center">
-                <Leaf className="w-5 h-5 text-white" />
+                <LogoIcon className="w-5.5 h-5.5 text-white" />
               </div>
               <span className="text-xl font-bold text-white" style={{ fontFamily: 'var(--font-playfair)' }}>
                 Rise With Rupali

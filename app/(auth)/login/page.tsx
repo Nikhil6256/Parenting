@@ -8,7 +8,8 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import toast from 'react-hot-toast';
-import { Eye, EyeOff, Leaf, Mail, Lock, LogIn } from 'lucide-react';
+import { Eye, EyeOff, Mail, Lock, LogIn } from 'lucide-react';
+import LogoIcon from '@/components/common/LogoIcon';
 
 const schema = z.object({
   email: z.string().email('Enter a valid email'),
@@ -133,7 +134,7 @@ export default function LoginPage() {
           {/* Header */}
           <div className="text-center mb-8">
             <div className="inline-flex items-center justify-center w-14 h-14 bg-sage-gradient rounded-2xl shadow-soft mb-4">
-              <Leaf className="w-7 h-7 text-white" />
+              <LogoIcon className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-2xl font-bold text-sage-900" style={{ fontFamily: 'var(--font-playfair)' }}>
               पुन्हा स्वागत आहे!
