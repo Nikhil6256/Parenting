@@ -79,7 +79,7 @@ export default async function BlogDetailPage({ params }: Props) {
             <div className="w-14 h-14 bg-sage-gradient rounded-2xl flex items-center justify-center text-white text-xl font-bold flex-shrink-0">R</div>
             <div>
               <p className="font-bold text-sage-900">{post.author}</p>
-              <p className="text-sage-500 text-sm">Certified Parenting Coach · Rise With Rupali</p>
+              <p className="text-sage-500 text-sm">Parenting Partner · Rise With Rupali</p>
               <Link href="/about" className="text-sage-600 text-sm font-medium hover:text-sage-700">Learn more →</Link>
             </div>
           </div>

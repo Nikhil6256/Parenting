@@ -5,33 +5,33 @@ import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    id: 1, name: 'प्रिया शर्मा', location: 'मुंबई', role: 'दोन मुलांची आई',
+    id: 1, name: 'अनिता पाटील', location: 'सांगली', role: 'दोन मुलांची आई',
     rating: 5, avatar: '👩',
-    text: 'रुपाली यांच्या Positive Parenting कोर्समुळे माझ्या मुलांकडे बघण्याचा दृष्टिकोनच बदलला. रोज रागावण्यापासून आता आईपण खरोखरच आनंददायी वाटू लागले आहे. माझा ६ वर्षांचा मुलगा शांत झाला आहे — आणि मीही!',
+    text: 'रुपाली मॅडमच्या पॅरेंटिंग कोर्समुळे माझ्या मुलांशी माझं नातं खूप सुंदर झालं आहे. रोजच्या कटकटी आणि चिडचिड थांबून घरामध्ये शांतता आणि प्रेम वाढले आहे.',
     course: 'Positive Parenting Foundations',
   },
   {
-    id: 2, name: 'Arjun & Deepika Menon', location: 'Bangalore', role: 'Parents of 3',
+    id: 2, name: 'सागर व प्रियांका देशपांडे', location: 'पुणे', role: 'पालक',
     rating: 5, avatar: '👨‍👩‍👦',
-    text: "We had tried many parenting books but nothing clicked until Rupali's course. Her practical strategies for mealtime battles and bedtime routines have made our evenings so much more peaceful.",
+    text: 'आम्ही मुलांच्या शिस्तीबाबत खूप चिंतेत होतो. पण रुपाली मॅडमच्या मार्गदर्शनानंतर मुलांशी सकारात्मक संवाद कसा साधावा हे समजले. घरातील वातावरण आता खूप प्रसन्न राहते.',
     course: 'Gentle Discipline That Works',
   },
   {
-    id: 3, name: 'कविता नायर', location: 'चेन्नई', role: 'एकल माता',
+    id: 3, name: 'सुप्रिया कुलकर्णी', location: 'कोल्हापूर', role: 'माता',
     rating: 5, avatar: '👩‍👦',
-    text: 'एकट्या आईसारखं राहताना मला स्वतःवरचा विश्वासच उडाला होता. रुपाली यांच्या Emotional Intelligence कोर्सने मला साधनेच नव्हे, तर आत्मविश्वासही दिला. माझ्या मुलाचे शाळेतील मार्क खूप सुधारले आहेत.',
+    text: 'मुलांच्या भावना समजून घेणे आणि त्यांना योग्य दिशा देणे मला रुपाली मॅडमच्या कोर्समुळे शक्य झाले. माझ्या मुलाचा आत्मविश्वास खूप वाढला आहे.',
     course: 'Raising Emotionally Intelligent Kids',
   },
   {
-    id: 4, name: 'Rohit Gupta', location: 'Delhi', role: 'Father of twins',
-    rating: 5, avatar: '👨',
-    text: "I was sceptical about online parenting courses, but Rupali's teaching style is so warm and relatable. I've recommended this to every parent I know. Best investment I've made for my family.",
+    id: 4, name: 'महेश व प्राजक्ता जोशी', location: 'नाशिक', role: 'दोन मुलांचे पालक',
+    rating: 5, avatar: '👨‍👩‍👧',
+    text: 'रुपाली मॅडमची शिकवण्याची पद्धत अतिशय सोपी, व्यावहारिक आणि मनाला भिडणारी आहे. महाराष्ट्रातील प्रत्येक पालकाने हा कोर्स नक्की केला पाहिजे.',
     course: 'Positive Parenting Foundations',
   },
   {
-    id: 5, name: 'स्नेहा पाटील', location: 'पुणे', role: 'किशोरवयीन मुलीची आई',
+    id: 5, name: 'स्नेहा जाधव', location: 'सातारा', role: 'किशोरवयीन मुलीची आई',
     rating: 5, avatar: '👩‍👧',
-    text: 'माझ्या १४ वर्षांच्या मुलीशी नाते खूपच ताणले होते. Teen Parenting Module नंतर मला तिचं जग समजायला लागलं. आता आम्ही आठवड्यातून एकत्र बसतो आणि मनमोकळं बोलतो. रुपाली, तुम्ही आमचं आयुष्यच बदललंत!',
+    text: 'माझ्या १४ वर्षांच्या मुलीसोबत नाते खूप ताणले होते. Teen Parenting मास्टरक्लासनंतर मला तिचे जग समजायला लागले. रुपाली मॅडमचे मनापासून आभार!',
     course: 'Teen Parenting Masterclass',
   },
 ];

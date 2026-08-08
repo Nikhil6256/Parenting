@@ -25,7 +25,7 @@ export default function AboutSnippet() {
                 <div className="relative w-full" style={{ aspectRatio: '4/5' }}>
                   <Image
                     src="/images/tutor/rupali-2.jpg"
-                    alt="Rupali — M.Sc. Psychology, Certified Parenting Coach"
+                    alt="Rupali — Parenting Partner & Life Coach"
                     fill
                     className="object-cover object-top"
                     sizes="(max-width: 768px) 100vw, 500px"
@@ -39,8 +39,8 @@ export default function AboutSnippet() {
                     </div>
                     <div>
                       <h3 className="font-bold text-sage-900 text-base" style={{ fontFamily: 'var(--font-playfair)' }}>Rupali</h3>
-                      <p className="text-sage-600 text-xs">M.Sc. Psychology | Certified Coach</p>
-                      <p className="text-sage-500 text-xs">8+ years of practice</p>
+                      <p className="text-sage-600 text-xs">Parenting Partner &amp; Life Coach</p>
+                      <p className="text-sage-500 text-xs">2+ years of experience</p>
                     </div>
                   </div>
 
@@ -48,9 +48,9 @@ export default function AboutSnippet() {
                     &ldquo;Parenting is not about being perfect. It&apos;s about being present, patient, and willing to grow alongside your child.&rdquo;
                   </blockquote>
 
-                  {/* Certifications */}
+                  {/* Badges */}
                   <div className="mt-4 flex flex-wrap gap-2">
-                    {['ICF Certified', 'Positive Parenting', 'Child Psychology'].map(cert => (
+                    {['Positive Parenting', 'Life Coaching'].map(cert => (
                       <span key={cert} className="badge badge-green text-xs">{cert}</span>
                     ))}
                   </div>
@@ -59,8 +59,8 @@ export default function AboutSnippet() {
 
               {/* Floating stat card */}
               <div className="absolute -bottom-5 -right-5 bg-white rounded-2xl shadow-card-hover p-4 border border-sage-100">
-                <p className="text-2xl font-bold text-sage-700">500+</p>
-                <p className="text-xs text-sage-500 font-medium">Families transformed</p>
+                <p className="text-2xl font-bold text-sage-700">1000+</p>
+                <p className="text-xs text-sage-500 font-medium">Happy Parents</p>
               </div>
             </div>
           </div>
@@ -75,13 +75,13 @@ export default function AboutSnippet() {
               <span className="gradient-text">Parenting Partner</span>
             </h2>
             <p className="text-sage-600 leading-relaxed mb-5">
-              With a Master&apos;s in Psychology and 8+ years coaching families across India, Rupali blends 
-              scientific research with heartful wisdom to help parents break generational cycles and build 
+              With 2+ years of experience coaching families across Maharashtra, Rupali blends 
+              practical wisdom with empathetic guidance to help parents break generational cycles and build 
               deeply connected families.
             </p>
             <p className="text-sage-600 leading-relaxed mb-8">
               Her approach is rooted in the belief that when parents thrive, children flourish. Her courses 
-              and coaching have helped over 5,000 families create calmer, happier homes.
+              and coaching have helped over 1000 happy parents create calmer, happier homes.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">

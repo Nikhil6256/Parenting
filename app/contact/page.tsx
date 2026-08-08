@@ -17,9 +17,9 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 const contactInfo = [
-  { icon: Mail,  label: 'Email',    value: 'rupsdabade@gmail.com',  href: 'mailto:rupsdabade@gmail.com' },
+  { icon: Mail,  label: 'Email',    value: 'rupalidabade999@gmail.com',  href: 'mailto:rupalidabade999@gmail.com' },
   { icon: Phone, label: 'Phone',    value: '+91 98221 76300',        href: 'tel:+919822176300' },
-  { icon: MapPin,label: 'Location', value: 'Mumbai, India',          href: '#' },
+  { icon: MapPin,label: 'Location', value: 'Sangli, Maharashtra',    href: '#' },
 ];
 
 export default function ContactPage() {
@@ -92,7 +92,7 @@ export default function ContactPage() {
               <div className="card p-6 bg-warm-gradient border border-beige-100">
                 <p className="text-lg font-bold text-sage-900 mb-1" style={{ fontFamily: 'var(--font-playfair)' }}>Not sure which course to pick?</p>
                 <p className="text-sage-600 text-sm mb-4">Send me a message or email and I&apos;ll personally help you find the right fit for your family.</p>
-                <a href="mailto:rupsdabade@gmail.com" className="btn-primary text-sm">
+                <a href="mailto:rupalidabade999@gmail.com" className="btn-primary text-sm">
                   Email Me →
                 </a>
               </div>

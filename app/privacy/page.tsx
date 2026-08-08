@@ -25,7 +25,7 @@ export default function PrivacyPage() {
           <h2 className="text-xl font-bold text-sage-900 mt-6 mb-3">4. Third-Party Services</h2>
           <p>We use Razorpay (payments), Cloudinary (media), and Bunny.net (video). Each has its own privacy policy.</p>
           <h2 className="text-xl font-bold text-sage-900 mt-6 mb-3">5. Contact</h2>
-          <p>For privacy concerns, email us at <a href="mailto:rajc2538@gmail.com" className="text-sage-600 underline">rajc2538@gmail.com</a>.</p>
+          <p>For privacy concerns, email us at <a href="mailto:rupalidabade999@gmail.com" className="text-sage-600 underline">rupalidabade999@gmail.com</a>.</p>
         </div>
       </div>
     </div>

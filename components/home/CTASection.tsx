@@ -23,8 +23,7 @@ export default function CTASection() {
             </h2>
 
             <p className="text-sage-100 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-              Join thousands of parents who chose to grow. Browse our courses, or start with a free discovery call 
-              to find the right path for your family.
+              Join over 1000 happy parents who chose to grow. Browse our courses to find the right path for your family.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -38,7 +37,7 @@ export default function CTASection() {
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 border-2 border-white/50 text-white hover:bg-white/10 font-semibold px-8 py-4 rounded-xl transition-all duration-200"
               >
-                Book a Free Call
+                Contact Us
               </Link>
             </div>
 

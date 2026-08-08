@@ -19,13 +19,13 @@ export default function TermsPage() {
           <h2 className="text-xl font-bold text-sage-900 mt-6 mb-3">1. Course Access</h2>
           <p>Upon purchase, you receive lifetime access to the course content. Access is personal and non-transferable.</p>
           <h2 className="text-xl font-bold text-sage-900 mt-6 mb-3">2. Refund Policy</h2>
-          <p>Due to the digital nature of our courses and downloadable content, all sales are final once content access is granted. If you experience technical issues accessing your purchased courses, please contact our support team at rupsdabade@gmail.com.</p>
+          <p>Due to the digital nature of our courses and downloadable content, all sales are final once content access is granted. If you experience technical issues accessing your purchased courses, please contact our support team at rupalidabade999@gmail.com.</p>
           <h2 className="text-xl font-bold text-sage-900 mt-6 mb-3">3. Intellectual Property</h2>
           <p>All course content is the intellectual property of Rise With Rupali. You may not distribute, share, or resell any content.</p>
           <h2 className="text-xl font-bold text-sage-900 mt-6 mb-3">4. Limitation of Liability</h2>
           <p>Rise With Rupali provides educational content and is not a substitute for professional medical or psychological advice.</p>
           <h2 className="text-xl font-bold text-sage-900 mt-6 mb-3">5. Contact</h2>
-          <p>For questions about these terms, contact us at <a href="mailto:rajc2538@gmail.com" className="text-sage-600 underline">rajc2538@gmail.com</a>.</p>
+          <p>For questions about these terms, contact us at <a href="mailto:rupalidabade999@gmail.com" className="text-sage-600 underline">rupalidabade999@gmail.com</a>.</p>
         </div>
       </div>
     </div>

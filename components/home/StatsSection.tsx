@@ -1,10 +1,10 @@
 import { Users, BookOpen, Star, Award } from 'lucide-react';
 
 const stats = [
-  { icon: Users, value: '5,000+', label: 'Happy Parents', color: 'bg-sage-50 text-sage-600' },
-  { icon: BookOpen, value: '20+', label: 'Expert Courses', color: 'bg-mist-50 text-mist-600' },
+  { icon: Users, value: '1000', label: 'Happy Parents', color: 'bg-sage-50 text-sage-600' },
+  { icon: BookOpen, value: 'Expert', label: 'Courses', color: 'bg-mist-50 text-mist-600' },
   { icon: Star, value: '4.9/5', label: 'Average Rating', color: 'bg-beige-50 text-beige-600' },
-  { icon: Award, value: '8 Years', label: 'Experience', color: 'bg-blush-50 text-blush-600' },
+  { icon: Award, value: '2+ Years', label: 'Experience', color: 'bg-blush-50 text-blush-600' },
 ];
 
 export default function StatsSection() {

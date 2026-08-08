@@ -24,17 +24,17 @@ export default function HeroSection() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-sage-100 text-sage-700 rounded-full text-sm font-semibold mb-6 border border-sage-200">
               <span className="w-2 h-2 bg-sage-500 rounded-full animate-pulse-soft" />
-              Certified Parenting Coach
+              Parenting Partner
             </div>
 
             <h1 className="section-title mb-6 leading-[1.15]">
               Raise Confident,{' '}
               <span className="gradient-text">Happy Children</span>{' '}
-              with Heart &amp; Science
+              with Heart &amp; Wisdom
             </h1>
 
             <p className="text-lg text-sage-600 leading-relaxed mb-8 max-w-lg">
-              Join thousands of parents transforming their family life with Rupali&apos;s evidence-based parenting 
+              Join hundreds of happy parents transforming their family life with Rupali&apos;s parenting 
               coaching. Learn proven strategies that actually work — with love, not fear.
             </p>
 
@@ -46,11 +46,11 @@ export default function HeroSection() {
               </div>
               <div className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full shadow-soft text-xs font-medium text-sage-700 border border-sage-100">
                 <Users className="w-3.5 h-3.5 text-sage-500" />
-                5,000+ happy parents
+                1000 happy parents
               </div>
               <div className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full shadow-soft text-xs font-medium text-sage-700 border border-sage-100">
                 <BookOpen className="w-3.5 h-3.5 text-mist-500" />
-                20+ expert courses
+                Expert courses
               </div>
             </div>
 
@@ -81,7 +81,7 @@ export default function HeroSection() {
                 <div className="relative w-full" style={{ aspectRatio: '3/4' }}>
                   <Image
                     src="/images/tutor/rupali-1.jpg"
-                    alt="Rupali — Certified Parenting & Life Coach"
+                    alt="Rupali — Parenting Partner & Life Coach"
                     fill
                     priority
                     className="object-cover object-top"
@@ -90,7 +90,7 @@ export default function HeroSection() {
                 </div>
                 <div className="p-5 text-center">
                   <h3 className="text-xl font-bold text-sage-900 mb-1" style={{ fontFamily: 'var(--font-playfair)' }}>Hi, I&apos;m Rupali</h3>
-                  <p className="text-sage-600 text-sm mb-3">Certified Parenting &amp; Life Coach</p>
+                  <p className="text-sage-600 text-sm mb-3">Parenting Partner &amp; Life Coach</p>
                   <div className="flex justify-center gap-1 mb-3">
                     {[1,2,3,4,5].map(i => (
                       <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
@@ -102,7 +102,7 @@ export default function HeroSection() {
                 </div>
               </div>
 
-              {/* Floating stat cards — will-change:transform so GPU handles them */}
+              {/* Floating stat card — Reviews */}
               <div
                 className="absolute -top-4 -right-4 bg-white rounded-2xl shadow-card p-3 border border-sage-100 blob-anim"
                 style={{ animationDelay: '1s' }}
@@ -112,19 +112,6 @@ export default function HeroSection() {
                   <div>
                     <p className="text-xs font-bold text-sage-900">500+</p>
                     <p className="text-xs text-sage-500">Reviews</p>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-card p-3 border border-sage-100 blob-anim"
-                style={{ animationDelay: '4s' }}
-              >
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 bg-beige-100 rounded-xl flex items-center justify-center text-sm">📚</div>
-                  <div>
-                    <p className="text-xs font-bold text-sage-900">20+ Courses</p>
-                    <p className="text-xs text-sage-500">Available</p>
                   </div>
                 </div>
               </div>

@@ -59,9 +59,9 @@ export default function Footer() {
 
             {/* Contact info */}
             <div className="space-y-2">
-              <a href="mailto:rupsdabade@gmail.com" className="flex items-center gap-2.5 text-sm text-sage-400 hover:text-sage-200 transition-colors">
+              <a href="mailto:rupalidabade999@gmail.com" className="flex items-center gap-2.5 text-sm text-sage-400 hover:text-sage-200 transition-colors">
                 <Mail className="w-4 h-4 text-sage-500 flex-shrink-0" />
-                <span>rupsdabade@gmail.com</span>
+                <span>rupalidabade999@gmail.com</span>
               </a>
               <a href="tel:+919822176300" className="flex items-center gap-2.5 text-sm text-sage-400 hover:text-sage-200 transition-colors">
                 <Phone className="w-4 h-4 text-sage-500 flex-shrink-0" />
@@ -69,7 +69,7 @@ export default function Footer() {
               </a>
               <div className="flex items-center gap-2.5 text-sm text-sage-400">
                 <MapPin className="w-4 h-4 text-sage-500 flex-shrink-0" />
-                <span>Mumbai, India</span>
+                <span>Sangli, Maharashtra</span>
               </div>
             </div>
 

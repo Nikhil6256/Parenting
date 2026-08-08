@@ -18,11 +18,11 @@ const faqs = [
   },
   {
     q: 'What makes your approach different from other parenting courses?',
-    a: 'My courses combine Western research-backed psychology with the realities of Indian family dynamics and culture. I understand joint family challenges, academic pressures, and the unique emotional landscape of Indian parenting.',
+    a: 'My courses combine practical, empathetic tools with the realities of Indian family dynamics and culture. I understand joint family challenges, academic pressures, and the unique emotional landscape of Indian parenting.',
   },
   {
     q: 'What if I have an issue with the course?',
-    a: 'Your satisfaction matters to me. If you face any technical issues or have concerns about the course, reach out to me directly at rupsdabade@gmail.com or call +91 98221 76300 and I\'ll personally make sure you\'re taken care of.',
+    a: 'Your satisfaction matters to me. If you face any technical issues or have concerns about the course, reach out to me directly at rupalidabade999@gmail.com or call +91 98221 76300 and I\'ll personally make sure you\'re taken care of.',
   },
   {
     q: 'Will the course content be in English or Hindi?',
