@@ -76,22 +76,22 @@ export default function SignupPage() {
               <Leaf className="w-7 h-7 text-white" />
             </div>
             <h1 className="text-2xl font-bold text-sage-900" style={{ fontFamily: 'var(--font-playfair)' }}>
-              Start Your Journey
+              खाते तयार करा
             </h1>
-            <p className="text-sage-500 text-sm mt-1">Create your free account today</p>
+            <p className="text-sage-500 text-sm mt-1">तुमच्या पॅरेंटिंग प्रवासाची आजच सुरुवात करा</p>
           </div>
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             {/* Name */}
             <div>
-              <label className="label" htmlFor="name">Full Name</label>
+              <label className="label" htmlFor="name">संपूर्ण नाव</label>
               <div className="relative">
                 <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-sage-400" />
                 <input
                   id="name"
                   type="text"
                   autoComplete="name"
-                  placeholder="Your full name"
+                  placeholder="तुमचे संपूर्ण नाव"
                   className={`input pl-10 ${errors.name ? 'border-red-300' : ''}`}
                   {...register('name')}
                 />
@@ -101,7 +101,7 @@ export default function SignupPage() {
 
             {/* Email */}
             <div>
-              <label className="label" htmlFor="email">Email Address</label>
+              <label className="label" htmlFor="email">ईमेल पत्ता</label>
               <div className="relative">
                 <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-sage-400" />
                 <input
@@ -118,14 +118,14 @@ export default function SignupPage() {
 
             {/* Password */}
             <div>
-              <label className="label" htmlFor="password">Password</label>
+              <label className="label" htmlFor="password">पासवर्ड</label>
               <div className="relative">
                 <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-sage-400" />
                 <input
                   id="password"
                   type={showPassword ? 'text' : 'password'}
                   autoComplete="new-password"
-                  placeholder="Min. 6 characters"
+                  placeholder="किमान ६ अक्षरे"
                   className={`input pl-10 pr-10 ${errors.password ? 'border-red-300' : ''}`}
                   {...register('password')}
                 />
@@ -138,14 +138,14 @@ export default function SignupPage() {
 
             {/* Confirm Password */}
             <div>
-              <label className="label" htmlFor="confirmPassword">Confirm Password</label>
+              <label className="label" htmlFor="confirmPassword">पासवर्ड पुन्हा लिहा</label>
               <div className="relative">
                 <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-sage-400" />
                 <input
                   id="confirmPassword"
                   type={showPassword ? 'text' : 'password'}
                   autoComplete="new-password"
-                  placeholder="Repeat your password"
+                  placeholder="पासवर्ड पुन्हा लिहा"
                   className={`input pl-10 ${errors.confirmPassword ? 'border-red-300' : ''}`}
                   {...register('confirmPassword')}
                 />
@@ -162,26 +162,26 @@ export default function SignupPage() {
                 <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
               ) : (
                 <>
-                  <UserPlus className="w-4 h-4" /> Create Account
+                  <UserPlus className="w-4 h-4" /> खाते तयार करा
                 </>
               )}
             </button>
           </form>
 
           <p className="text-center text-xs text-sage-400 mt-4">
-            By signing up, you agree to our{' '}
-            <Link href="/terms" className="text-sage-600 hover:underline">Terms</Link> and{' '}
-            <Link href="/privacy" className="text-sage-600 hover:underline">Privacy Policy</Link>
+            नोंदणी करून तुम्ही आमच्या{' '}
+            <Link href="/terms" className="text-sage-600 hover:underline">अटी व शर्ती</Link> आणि{' '}
+            <Link href="/privacy" className="text-sage-600 hover:underline">गोपनीयता धोरणाला</Link> संमती देता
           </p>
 
           <div className="relative my-5">
             <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-sage-100" /></div>
-            <div className="relative flex justify-center"><span className="bg-white px-3 text-xs text-sage-400">already have an account?</span></div>
+            <div className="relative flex justify-center"><span className="bg-white px-3 text-xs text-sage-400">आधीपासूनच खाते आहे?</span></div>
           </div>
 
           <p className="text-center text-sm">
             <Link href="/login" className="font-semibold text-sage-600 hover:text-sage-800 underline underline-offset-2">
-              Sign In Instead
+              येथे लॉगिन करा
             </Link>
           </p>
         </div>

@@ -17,9 +17,9 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 const contactInfo = [
-  { icon: Mail,  label: 'Email',    value: 'rupalidabade999@gmail.com',  href: 'mailto:rupalidabade999@gmail.com' },
-  { icon: Phone, label: 'Phone',    value: '+91 98221 76300',        href: 'tel:+919822176300' },
-  { icon: MapPin,label: 'Location', value: 'Sangli, Maharashtra',    href: '#' },
+  { icon: Mail,  label: 'ईमेल',    value: 'rupalidabade999@gmail.com',  href: 'mailto:rupalidabade999@gmail.com' },
+  { icon: Phone, label: 'फोन',    value: '+91 98221 76300',        href: 'tel:+919822176300' },
+  { icon: MapPin,label: 'पत्ता', value: 'सांगली, महाराष्ट्र',    href: '#' },
 ];
 
 export default function ContactPage() {
@@ -42,12 +42,12 @@ export default function ContactPage() {
       if (res.ok) {
         setSubmitted(true);
         reset();
-        toast.success('Message sent! I\'ll get back to you soon 💚');
+        toast.success('संदेश पाठवला गेला! मी लवकरच उत्तर देईन 💚');
       } else {
-        toast.error(json.error || 'Failed to send message');
+        toast.error(json.error || 'संदेश पाठवता आला नाही');
       }
     } catch {
-      toast.error('Something went wrong');
+      toast.error('काहीतरी त्रुटी झाली');
     } finally {
       setLoading(false);
     }
@@ -57,9 +57,9 @@ export default function ContactPage() {
     <>
       <section className="pt-28 pb-12 bg-hero-gradient">
         <div className="container-custom text-center">
-          <h1 className="section-title mb-4">Let&apos;s Connect 💚</h1>
+          <h1 className="section-title mb-4">संपर्क साधा 💚</h1>
           <p className="section-subtitle mx-auto" suppressHydrationWarning>
-            Have a question or want to know more about my courses? I&apos;d love to hear from you.
+            तुम्हाला काही विचारायचे आहे किंवा माझ्या कोर्सेसबद्दल अधिक माहिती हवी आहे? नक्की निवांत संदेश पाठवा.
           </p>
         </div>
       </section>
@@ -69,9 +69,9 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Info */}
             <div>
-              <h2 className="text-2xl font-bold text-sage-900 mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>Get in Touch</h2>
+              <h2 className="text-2xl font-bold text-sage-900 mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>माहिती व संपर्क</h2>
               <p className="text-sage-600 leading-relaxed mb-8">
-                Whether you have a question about my courses, want to explore 1:1 coaching, or just need a little parenting guidance — I&apos;m here for you. I typically respond within 24 hours.
+                तुम्हाला कोर्सेसबद्दल प्रश्न असल्यास किंवा पॅरेंटिंगबाबत काही मार्गदर्शन हवे असल्यास — मी नेहमी तयार आहे. २४ तासांच्या आत मी तुम्हाला नक्की उत्तर देईन.
               </p>
 
               <div className="space-y-4 mb-8">
@@ -88,12 +88,12 @@ export default function ContactPage() {
                 ))}
               </div>
 
-              {/* Info card — replaces Calendly */}
+              {/* Info card */}
               <div className="card p-6 bg-warm-gradient border border-beige-100">
-                <p className="text-lg font-bold text-sage-900 mb-1" style={{ fontFamily: 'var(--font-playfair)' }}>Not sure which course to pick?</p>
-                <p className="text-sage-600 text-sm mb-4">Send me a message or email and I&apos;ll personally help you find the right fit for your family.</p>
+                <p className="text-lg font-bold text-sage-900 mb-1" style={{ fontFamily: 'var(--font-playfair)' }}>कोणता कोर्स निवडावा हे समजले नाही?</p>
+                <p className="text-sage-600 text-sm mb-4">मला थेट संदेश किंवा ईमेल पाठवा, मी तुम्हाला योग्य कोर्स निवडण्यास मदत करेन.</p>
                 <a href="mailto:rupalidabade999@gmail.com" className="btn-primary text-sm">
-                  Email Me →
+                  ईमेल करा →
                 </a>
               </div>
             </div>
@@ -103,39 +103,39 @@ export default function ContactPage() {
               {submitted ? (
                 <div className="text-center py-8">
                   <div className="text-5xl mb-4">💌</div>
-                  <h3 className="text-xl font-bold text-sage-900 mb-2">Message Received!</h3>
-                  <p className="text-sage-600 mb-6">Thank you for reaching out. I&apos;ll be in touch within 24 hours.</p>
-                  <button onClick={() => setSubmitted(false)} className="btn-secondary text-sm">Send Another</button>
+                  <h3 className="text-xl font-bold text-sage-900 mb-2">संदेश मिळाला!</h3>
+                  <p className="text-sage-600 mb-6">संपर्क साधल्याबद्दल धन्यवाद. मी २४ तासांच्या आत तुमच्याशी संपर्क साधेन.</p>
+                  <button onClick={() => setSubmitted(false)} className="btn-secondary text-sm">पुन्हा संदेश पाठवा</button>
                 </div>
               ) : (
                 <>
-                  <h2 className="text-xl font-bold text-sage-900 mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>Send a Message</h2>
+                  <h2 className="text-xl font-bold text-sage-900 mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>संदेश पाठवा</h2>
                   <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="label">Your Name</label>
-                        <input className={`input ${errors.name ? 'border-red-300' : ''}`} placeholder="Priya Sharma" {...register('name')} />
+                        <label className="label">तुमचे नाव</label>
+                        <input className={`input ${errors.name ? 'border-red-300' : ''}`} placeholder="प्रिया पाटील" {...register('name')} />
                         {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
                       </div>
                       <div>
-                        <label className="label">Email Address</label>
+                        <label className="label">ईमेल पत्ता</label>
                         <input type="email" className={`input ${errors.email ? 'border-red-300' : ''}`} placeholder="priya@example.com" {...register('email')} />
                         {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
                       </div>
                     </div>
 
                     <div>
-                      <label className="label">Subject</label>
-                      <input className={`input ${errors.subject ? 'border-red-300' : ''}`} placeholder="Question about your courses" {...register('subject')} />
+                      <label className="label">विषय</label>
+                      <input className={`input ${errors.subject ? 'border-red-300' : ''}`} placeholder="कोर्सबद्दल माहिती हवे आहे" {...register('subject')} />
                       {errors.subject && <p className="text-red-500 text-xs mt-1">{errors.subject.message}</p>}
                     </div>
 
                     <div>
-                      <label className="label">Message</label>
+                      <label className="label">तुमचा संदेश</label>
                       <textarea
                         rows={5}
                         className={`input resize-none ${errors.message ? 'border-red-300' : ''}`}
-                        placeholder="Tell me how I can help you..."
+                        placeholder="तुमचा प्रश्न येथे लिहा..."
                         {...register('message')}
                       />
                       {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>}
@@ -145,7 +145,7 @@ export default function ContactPage() {
                       {loading ? (
                         <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
                       ) : (
-                        <><Send className="w-4 h-4" /> Send Message</>
+                        <><Send className="w-4 h-4" /> संदेश पाठवा</>
                       )}
                     </button>
                   </form>

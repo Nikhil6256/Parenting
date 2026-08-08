@@ -11,17 +11,17 @@ import type { CourseType } from '@/types';
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: 'All Courses',
-  description: 'Browse all parenting courses by Rupali. Expert-led, evidence-based programs for every stage of parenthood.',
+  title: 'सर्व कोर्सेस - Rise With Rupali',
+  description: 'रुपाली मॅडमचे सर्व पॅरेंटिंग कोर्सेस. तुमच्या सोयीनुसार, कधीही आणि कुठूनही शिका.',
 };
 
-const CATEGORIES = ['All', 'Parenting Basics', 'Child Development', 'Discipline', 'Emotional Intelligence', 'Teen Parenting', 'Special Needs', 'Self Care for Parents'];
+const CATEGORIES = ['सर्व', 'पॅरेंटिंग मूलतत्वे', 'बालविकास', 'सकारात्मक शिस्त', 'भावनिक विकास', 'किशोरवयीन पालकत्व'];
 
 async function getCourses(category?: string): Promise<CourseType[]> {
   try {
     await dbConnect();
     const filter: any = { status: 'published' };
-    if (category && category !== 'All') filter.category = category;
+    if (category && category !== 'All' && category !== 'सर्व') filter.category = category;
     const courses = await Course.find(filter).sort({ enrolledCount: -1, createdAt: -1 }).lean();
     return JSON.parse(JSON.stringify(courses));
   } catch { return []; }
@@ -32,7 +32,7 @@ interface Props {
 }
 
 export default async function CoursesPage({ searchParams }: Props) {
-  const selectedCat = searchParams.cat || 'All';
+  const selectedCat = searchParams.cat || 'सर्व';
   const courses = await getCourses(selectedCat);
 
   return (
@@ -41,11 +41,11 @@ export default async function CoursesPage({ searchParams }: Props) {
       <section className="pt-28 pb-12 bg-hero-gradient">
         <div className="container-custom text-center">
           <h1 className="section-title mb-4">
-            Learn at Your Own Pace,{' '}
-            <span className="gradient-text">Grow Every Day</span>
+            तुमच्या वेळेनुसार शिका,{' '}
+            <span className="gradient-text">दररोज समृद्ध व्हा</span>
           </h1>
           <p className="section-subtitle mx-auto">
-            {courses.length > 0 ? `${courses.length} expert-led courses` : 'Expert-led courses'} — from newborn basics to teen communication.
+            सोपे आणि प्रभावी कोर्सेस — लहान मुलांपासून ते किशोरावस्थेपर्यंतच्या सर्व टप्प्यांसाठी मार्गदर्शन.
           </p>
         </div>
       </section>
@@ -58,7 +58,7 @@ export default async function CoursesPage({ searchParams }: Props) {
             {CATEGORIES.map(cat => (
               <Link
                 key={cat}
-                href={cat === 'All' ? '/courses' : `/courses?cat=${encodeURIComponent(cat)}`}
+                href={cat === 'सर्व' ? '/courses' : `/courses?cat=${encodeURIComponent(cat)}`}
                 className={`px-4 py-2 rounded-xl text-sm font-medium transition-all border ${
                   selectedCat === cat
                     ? 'bg-sage-500 text-white border-sage-500 shadow-soft'
@@ -74,8 +74,8 @@ export default async function CoursesPage({ searchParams }: Props) {
           {courses.length === 0 ? (
             <div className="text-center py-20 card p-10">
               <div className="text-5xl mb-4">📚</div>
-              <h3 className="text-xl font-bold text-sage-900 mb-2">Courses coming soon!</h3>
-              <p className="text-sage-500">Check back soon — new courses are being added regularly.</p>
+              <h3 className="text-xl font-bold text-sage-900 mb-2">कोर्सेस लवकरच येत आहेत!</h3>
+              <p className="text-sage-500">नवीन कोर्सेस जोडले जात आहेत, कृपया लवकरच तपासा.</p>
             </div>
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -87,10 +87,9 @@ export default async function CoursesPage({ searchParams }: Props) {
                       <Image src={course.thumbnail} alt={course.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover group-hover:scale-105" style={{ transition: 'transform 400ms ease' }} />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center text-5xl opacity-50">
-                        {course.category === 'Parenting Basics' ? '🌱' :
-                         course.category === 'Emotional Intelligence' ? '💚' :
-                         course.category === 'Discipline' ? '⭐' :
-                         course.category === 'Teen Parenting' ? '🌟' : '📖'}
+                        {course.category === 'Parenting Basics' || course.category === 'पॅरेंटिंग मूलतत्वे' ? '🌱' :
+                         course.category === 'Emotional Intelligence' || course.category === 'भावनिक विकास' ? '💚' :
+                         course.category === 'Discipline' || course.category === 'सकारात्मक शिस्त' ? '⭐' : '📖'}
                       </div>
                     )}
                     <div className="absolute top-3 left-3 flex gap-2">
@@ -99,7 +98,7 @@ export default async function CoursesPage({ searchParams }: Props) {
                     {course.discountPrice && (
                       <div className="absolute top-3 right-3">
                         <span className="badge bg-red-100 text-red-700 shadow-soft">
-                          {Math.round(((course.price - course.discountPrice) / course.price) * 100)}% OFF
+                          {Math.round(((course.price - course.discountPrice) / course.price) * 100)}% सूट
                         </span>
                       </div>
                     )}
@@ -107,10 +106,10 @@ export default async function CoursesPage({ searchParams }: Props) {
 
                   <div className="p-5">
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="badge badge-blue text-xs">{course.level}</span>
+                      <span className="badge badge-blue text-xs">{course.level === 'Beginner' ? 'सोपा' : course.level}</span>
                       <div className="flex items-center gap-1 ml-auto">
                         <Star className="w-3.5 h-3.5 text-yellow-400 fill-yellow-400" />
-                        <span className="text-xs text-slate-500">4.9</span>
+                        <span className="text-xs text-slate-500">४.९</span>
                       </div>
                     </div>
 
@@ -120,10 +119,10 @@ export default async function CoursesPage({ searchParams }: Props) {
                     <p className="text-slate-500 text-sm line-clamp-2 mb-4">{course.shortDescription}</p>
 
                     <div className="flex items-center gap-4 text-xs text-slate-400 mb-4">
-                      <span className="flex items-center gap-1"><BookOpen className="w-3.5 h-3.5" />{course.totalLessons || 0} lessons</span>
-                      <span className="flex items-center gap-1"><Users className="w-3.5 h-3.5" />{course.enrolledCount} enrolled</span>
+                      <span className="flex items-center gap-1"><BookOpen className="w-3.5 h-3.5" />{course.totalLessons || 0} धडे</span>
+                      <span className="flex items-center gap-1"><Users className="w-3.5 h-3.5" />{course.enrolledCount} पालक</span>
                       {course.totalDuration && (
-                        <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />{Math.round(course.totalDuration / 60)}h</span>
+                        <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />{Math.round(course.totalDuration / 60)} तास</span>
                       )}
                     </div>
 
@@ -139,7 +138,7 @@ export default async function CoursesPage({ searchParams }: Props) {
                         )}
                       </div>
                       <Link href={`/courses/${course.slug}`} className="btn-primary text-xs py-2 px-4">
-                        View Course
+                        कोर्स पहा
                       </Link>
                     </div>
                   </div>

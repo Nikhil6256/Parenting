@@ -5,36 +5,32 @@ import { ChevronDown } from 'lucide-react';
 
 const faqs = [
   {
-    q: 'Do I need any prior knowledge to enroll in your courses?',
-    a: 'Absolutely not! My courses are designed for all parents — whether you\'re a first-time parent or have been parenting for years. Each course starts from the basics and builds progressively.',
+    q: 'कोर्स सुरू करण्यासाठी मला आधी काही विशेष ज्ञान असणे आवश्यक आहे का?',
+    a: 'अजिबात नाही! माझे सर्व कोर्सेस अगदी सोप्या भाषेपासून सुरू होतात. नवीन पालक असोत किंवा अनुभवी, सर्वांसाठी हे कोर्सेस अत्यंत सोपे आणि उपयुक्त आहेत.',
   },
   {
-    q: 'How long do I have access to the course after purchase?',
-    a: 'You get lifetime access to all course content once you purchase. Watch at your own pace, revisit lessons, and access any future updates we add at no extra cost.',
+    q: 'कोर्स विकत घेतल्यानंतर मी तो किती दिवस पाहू शकतो?',
+    a: 'तुम्हाला सर्व व्हिडिओ आणि साहित्याचा आयुष्यभरासाठी (Lifetime Access) ॲक्सेस मिळतो. तुम्ही तुमच्या वेळेनुसार आणि सोयीनुसार कितीही वेळा व्हिडिओ पाहू शकता.',
   },
   {
-    q: 'Are the courses suitable for children of all ages?',
-    a: 'Each course specifies the age range it\'s most relevant for. We have courses for parents of toddlers (1-3 years), school-age children (4-12 years), and teenagers (13-18 years). Many strategies are universal.',
+    q: 'हे कोर्सेस कोणत्या वयोगटातील मुलांच्या पालकांसाठी आहेत?',
+    a: 'लहान मुलांपासून (१-३ वर्षे), शालेय मुले (४-१२ वर्षे) आणि किशोरवयीन मुलांच्या (१३-१८ वर्षे) पालकांसाठी प्रत्येक टप्प्यानुसार विशेष मार्गदर्शन यात आहे.',
   },
   {
-    q: 'What makes your approach different from other parenting courses?',
-    a: 'My courses combine practical, empathetic tools with the realities of Indian family dynamics and culture. I understand joint family challenges, academic pressures, and the unique emotional landscape of Indian parenting.',
+    q: 'तुमच्या कोर्सेसचे मुख्य वैशिष्ट्य काय आहे?',
+    a: 'माझे कोर्सेस आपल्या भारतीय कौटुंबिक संस्कृती आणि जीवनशैलीचा विचार करून तयार केले आहेत. यात केवळ पुस्तकी ज्ञान नसून रोजच्या आयुष्यातील व्यावहारिक उपाय आहेत.',
   },
   {
-    q: 'What if I have an issue with the course?',
-    a: 'Your satisfaction matters to me. If you face any technical issues or have concerns about the course, reach out to me directly at rupalidabade999@gmail.com or call +91 98221 76300 and I\'ll personally make sure you\'re taken care of.',
+    q: 'मला काही अडचण आल्यास मी संपर्क कसा साधावा?',
+    a: 'तुमचे समाधान हेच आमचे ध्येय आहे. काहीही अडचण किंवा प्रश्न असल्यास तुम्ही थेट rupalidabade999@gmail.com किंवा +91 98221 76300 वर संपर्क साधू शकता.',
   },
   {
-    q: 'Will the course content be in English or Hindi?',
-    a: 'Currently all courses are taught in English. However, I use simple, conversational language that\'s easy to follow. Hindi-medium courses are planned for future release.',
+    q: 'कोर्स कोणत्या भाषेत उपलब्ध आहेत?',
+    a: 'सर्व कोर्सेस अतिशय सोप्या आणि सुंदर मराठी भाषेत उपलब्ध आहेत, जेणेकरून प्रत्येक पालकाला ते सहज समजतील आणि अमलात आणता येतील.',
   },
   {
-    q: 'Can I interact with Rupali directly?',
-    a: 'Yes! Premium course bundles include access to live Q&A sessions and a private community group where you can ask questions and connect with other parents.',
-  },
-  {
-    q: 'Is my payment secure?',
-    a: 'Absolutely. We use Razorpay, one of India\'s most trusted payment gateways, which supports UPI, net banking, credit/debit cards, and wallets. All transactions are encrypted.',
+    q: 'माझे पेमेंट सुरक्षित राहील का?',
+    a: 'होय, अगदी सुरक्षित. पेमेंटसाठी Razorpay या भारतातील अत्यंत सुरक्षित प्रणालीचा वापर केला जातो, ज्याद्वारे तुम्ही UPI, Google Pay, PhonePe किंवा कार्डने सुरक्षित पेमेंट करू शकता.',
   },
 ];
 
@@ -48,25 +44,25 @@ export default function FAQSection() {
           {/* Header */}
           <div className="lg:sticky lg:top-24">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-sage-100 text-sage-700 rounded-full text-sm font-semibold mb-4 border border-sage-200">
-              ❓ FAQs
+              ❓ वारंवार विचारले जाणारे प्रश्न
             </div>
             <h2 className="section-title mb-5">
-              Questions from{' '}
-              <span className="gradient-text">Curious Parents</span>
+              पालकांच्या मनातील{' '}
+              <span className="gradient-text">काही महत्त्वाचे प्रश्न</span>
             </h2>
             <p className="text-sage-600 leading-relaxed mb-8">
-              Can&apos;t find what you&apos;re looking for? I&apos;m always happy to help.
+              तुम्हाला हवी असलेली माहिती मिळाली नाही? मला थेट प्रश्न विचारा.
             </p>
             <a href="/contact" className="btn-primary inline-flex">
-              Ask Me Anything →
+              प्रश्न विचारा →
             </a>
 
             {/* Fun stat card */}
             <div className="mt-8 bg-white rounded-2xl p-6 border border-sage-100 shadow-soft">
               <div className="text-3xl mb-3">💡</div>
-              <p className="font-bold text-sage-900 text-lg mb-1">Quick tip for today</p>
+              <p className="font-bold text-sage-900 text-lg mb-1">आजची महत्त्वाची टीप</p>
               <p className="text-sage-600 text-sm leading-relaxed">
-                When your child has a meltdown, connect before you correct. A simple hug or &ldquo;I see you&apos;re upset&rdquo; can de-escalate 80% of tantrums within minutes.
+                मुलांचा राग किंवा हट्ट अनावर झाल्यास, आधी त्यांच्या भावना समजून घ्या आणि नंतर सुधारणा सुचवा. एक प्रेमळ मिठी किंवा &ldquo;मला समजतेय तुला त्रास होतोय&rdquo; हे शब्द मुलांचा राग त्वरित शांत करतात.
               </p>
             </div>
           </div>

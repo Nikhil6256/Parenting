@@ -5,23 +5,23 @@ import { usePathname } from 'next/navigation';
 import { Leaf, Mail, Phone, MapPin, Heart, Share2, MessageCircle, Video, Send } from 'lucide-react';
 
 const footerLinks = {
-  Company: [
-    { href: '/about', label: 'About Rupali' },
-    { href: '/courses', label: 'Courses' },
-    { href: '/blog', label: 'Blog' },
-    { href: '/contact', label: 'Contact' },
+  'मुख्य दुवे': [
+    { href: '/about', label: 'रुपालींविषयी' },
+    { href: '/courses', label: 'सर्व कोर्सेस' },
+    { href: '/blog', label: 'ब्लॉग' },
+    { href: '/contact', label: 'संपर्क' },
   ],
-  Courses: [
-    { href: '/courses?cat=Parenting+Basics', label: 'Parenting Basics' },
-    { href: '/courses?cat=Child+Development', label: 'Child Development' },
-    { href: '/courses?cat=Discipline', label: 'Positive Discipline' },
-    { href: '/courses?cat=Emotional+Intelligence', label: 'Emotional Intelligence' },
+  'कोर्सेस': [
+    { href: '/courses', label: 'पॅरेंटिंग मूलतत्वे' },
+    { href: '/courses', label: 'बालविकास' },
+    { href: '/courses', label: 'सकारात्मक शिस्त' },
+    { href: '/courses', label: 'भावनिक विकास' },
   ],
-  Support: [
-    { href: '/contact', label: 'Contact Us' },
-    { href: '/my-courses', label: 'My Courses' },
-    { href: '/login', label: 'Sign In' },
-    { href: '/signup', label: 'Create Account' },
+  'मदत व सपोर्ट': [
+    { href: '/contact', label: 'संपर्क करा' },
+    { href: '/my-courses', label: 'माझे कोर्सेस' },
+    { href: '/login', label: 'लॉगिन करा' },
+    { href: '/signup', label: 'नवीन खाते' },
   ],
 };
 
@@ -54,7 +54,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sage-400 text-sm leading-relaxed mb-6 max-w-xs">
-              Empowering parents with evidence-based strategies and heartful guidance to raise confident, emotionally healthy children.
+              पालकांना प्रेमाने आणि समर्पक तंत्रांनी आपल्या मुलांचे भावनिक व मानसिक संगोपन करण्यास सक्षम बनवणे.
             </p>
 
             {/* Contact info */}
@@ -69,7 +69,7 @@ export default function Footer() {
               </a>
               <div className="flex items-center gap-2.5 text-sm text-sage-400">
                 <MapPin className="w-4 h-4 text-sage-500 flex-shrink-0" />
-                <span>Sangli, Maharashtra</span>
+                <span>सांगली, महाराष्ट्र</span>
               </div>
             </div>
 
@@ -96,7 +96,7 @@ export default function Footer() {
               <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">{section}</h4>
               <ul className="space-y-2.5">
                 {links.map((link) => (
-                  <li key={link.href}>
+                  <li key={link.label}>
                     <Link
                       href={link.href}
                       className="text-sage-400 hover:text-sage-200 text-sm transition-colors duration-200"
@@ -115,14 +115,14 @@ export default function Footer() {
       <div className="border-t border-sage-800">
         <div className="container-custom py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-sage-500 text-xs" suppressHydrationWarning>
-            © {new Date().getFullYear()} Rise With Rupali. All rights reserved.
+            © {new Date().getFullYear()} Rise With Rupali. सर्व हक्क सुरक्षित.
           </p>
           <p className="text-sage-500 text-xs flex items-center gap-1">
-            Made with <Heart className="w-3 h-3 text-red-400 fill-red-400" /> for parents everywhere
+            महाराष्ट्रातील पालकांसाठी <Heart className="w-3 h-3 text-red-400 fill-red-400" /> प्रेमाने तयार केले
           </p>
           <div className="flex items-center gap-4">
-            <Link href="/privacy" className="text-sage-500 hover:text-sage-300 text-xs transition-colors">Privacy</Link>
-            <Link href="/terms" className="text-sage-500 hover:text-sage-300 text-xs transition-colors">Terms</Link>
+            <Link href="/privacy" className="text-sage-500 hover:text-sage-300 text-xs transition-colors">गोपनीयता (Privacy)</Link>
+            <Link href="/terms" className="text-sage-500 hover:text-sage-300 text-xs transition-colors">अटी व शर्ती (Terms)</Link>
           </div>
         </div>
       </div>

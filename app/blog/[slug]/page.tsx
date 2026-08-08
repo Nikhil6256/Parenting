@@ -38,7 +38,7 @@ export default async function BlogDetailPage({ params }: Props) {
       <section className="pt-24 pb-0 bg-hero-gradient">
         <div className="container-custom max-w-3xl">
           <Link href="/blog" className="inline-flex items-center gap-1.5 text-sage-600 text-sm mb-6 hover:text-sage-700">
-            <ArrowLeft className="w-4 h-4" /> Back to Blog
+            <ArrowLeft className="w-4 h-4" /> ब्लॉगकडे परत जा
           </Link>
 
           <div className="flex flex-wrap gap-2 mb-4">
@@ -52,10 +52,10 @@ export default async function BlogDetailPage({ params }: Props) {
           <div className="flex items-center gap-5 text-sm text-sage-500 mb-8">
             <div className="flex items-center gap-1.5">
               <div className="w-7 h-7 bg-sage-gradient rounded-lg flex items-center justify-center text-white text-xs font-bold">R</div>
-              <span>By {post.author}</span>
+              <span>लेखक: {post.author}</span>
             </div>
             <span className="flex items-center gap-1"><Calendar className="w-3.5 h-3.5" /> {formatDate(post.publishedAt || post.createdAt)}</span>
-            {post.readingTime && <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> {post.readingTime}m read</span>}
+            {post.readingTime && <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> {post.readingTime} मि वाचन</span>}
           </div>
         </div>
       </section>
@@ -76,19 +76,19 @@ export default async function BlogDetailPage({ params }: Props) {
 
           {/* Author card */}
           <div className="card p-6 mt-8 flex items-center gap-4">
-            <div className="w-14 h-14 bg-sage-gradient rounded-2xl flex items-center justify-center text-white text-xl font-bold flex-shrink-0">R</div>
+            <div className="w-14 h-14 bg-sage-gradient rounded-2xl flex items-center justify-center text-white text-xl font-bold flex-shrink-0">रु</div>
             <div>
               <p className="font-bold text-sage-900">{post.author}</p>
-              <p className="text-sage-500 text-sm">Parenting Partner · Rise With Rupali</p>
-              <Link href="/about" className="text-sage-600 text-sm font-medium hover:text-sage-700">Learn more →</Link>
+              <p className="text-sage-500 text-sm">पॅरेंटिंग पार्टनर · Rise With Rupali</p>
+              <Link href="/about" className="text-sage-600 text-sm font-medium hover:text-sage-700">अधिक जाणून घ्या →</Link>
             </div>
           </div>
 
           {/* Related CTA */}
           <div className="card p-6 mt-6 bg-sage-50 border border-sage-100 text-center">
-            <p className="text-xl font-bold text-sage-900 mb-2" style={{ fontFamily: 'var(--font-playfair)' }}>Want to go deeper?</p>
-            <p className="text-sage-600 text-sm mb-4">Explore Rupali&apos;s courses for step-by-step guidance on this and much more.</p>
-            <Link href="/courses" className="btn-primary">Browse Courses →</Link>
+            <p className="text-xl font-bold text-sage-900 mb-2" style={{ fontFamily: 'var(--font-playfair)' }}>अधिक सखोल शिकायचे आहे?</p>
+            <p className="text-sage-600 text-sm mb-4">रुपाली मॅडमच्या कोर्सेसमध्ये सामील व्हा आणि मुलांचे संगोपन अधिक प्रेमाने करा.</p>
+            <Link href="/courses" className="btn-primary">कोर्सेस पहा →</Link>
           </div>
         </div>
       </section>

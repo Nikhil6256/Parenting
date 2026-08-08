@@ -61,14 +61,14 @@ export default function TestimonialsSection() {
         {/* Header */}
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-beige-50 text-beige-700 rounded-full text-sm font-semibold mb-4 border border-beige-100">
-            💬 Parent Stories
+            💬 पालकांचे अनुभव
           </div>
           <h2 className="section-title mb-4">
-            Real Transformations,{' '}
-            <span className="gradient-text">Real Families</span>
+            प्रत्यक्ष अनुभव,{' '}
+            <span className="gradient-text">आनंदी कुटुंबे</span>
           </h2>
           <p className="section-subtitle mx-auto">
-            Hear from parents who took the first step and never looked back.
+            ज्या पालकांनी सकारात्मक पाऊल उचलले आणि आपल्या कुटुंबात आनंद आणला, त्यांच्याच शब्दांत जाणून घ्या.
           </p>
         </div>
 

@@ -3,12 +3,12 @@ import Image from 'next/image';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 
 const values = [
-  'Evidence-based parenting strategies',
-  'Compassionate, non-judgmental approach',
-  'Practical tools for everyday challenges',
-  'Focus on emotional intelligence',
-  'Cultural sensitivity in Indian context',
-  'Community of supportive parents',
+  'प्रभावी आणि सोपे पॅरेंटिंग तंत्र',
+  'सामंजस्य आणि प्रेमळ दृष्टिकोन',
+  'रोजच्या अडचणींवर व्यावहारिक उपाय',
+  'भावनिक बुद्धिमत्तेचा विकास',
+  'कौटुंबिक मूल्यांची जपणूक',
+  'सकारात्मक पालकांचा परिवार',
 ];
 
 export default function AboutSnippet() {
@@ -25,7 +25,7 @@ export default function AboutSnippet() {
                 <div className="relative w-full" style={{ aspectRatio: '4/5' }}>
                   <Image
                     src="/images/tutor/rupali-2.jpg"
-                    alt="Rupali — Parenting Partner & Life Coach"
+                    alt="रुपाली — पॅरेंटिंग पार्टनर आणि लाईफ कोच"
                     fill
                     className="object-cover object-top"
                     sizes="(max-width: 768px) 100vw, 500px"
@@ -38,19 +38,19 @@ export default function AboutSnippet() {
                       🌿
                     </div>
                     <div>
-                      <h3 className="font-bold text-sage-900 text-base" style={{ fontFamily: 'var(--font-playfair)' }}>Rupali</h3>
-                      <p className="text-sage-600 text-xs">Parenting Partner &amp; Life Coach</p>
-                      <p className="text-sage-500 text-xs">2+ years of experience</p>
+                      <h3 className="font-bold text-sage-900 text-base" style={{ fontFamily: 'var(--font-playfair)' }}>रुपाली</h3>
+                      <p className="text-sage-600 text-xs">पॅरेंटिंग पार्टनर आणि लाईफ कोच</p>
+                      <p className="text-sage-500 text-xs">२+ वर्षांचा अनुभव</p>
                     </div>
                   </div>
 
                   <blockquote className="text-sage-700 italic text-sm leading-relaxed border-l-4 border-sage-300 pl-4">
-                    &ldquo;Parenting is not about being perfect. It&apos;s about being present, patient, and willing to grow alongside your child.&rdquo;
+                    &ldquo;पालकत्व म्हणजे परफेक्ट असणे नव्हे, तर मुलांसोबत स्वतःही शिकणे आणि प्रेमाने वाढणे होय.&rdquo;
                   </blockquote>
 
                   {/* Badges */}
                   <div className="mt-4 flex flex-wrap gap-2">
-                    {['Positive Parenting', 'Life Coaching'].map(cert => (
+                    {['पॉझिटिव्ह पॅरेंटिंग', 'लाईफ कोचिंग'].map(cert => (
                       <span key={cert} className="badge badge-green text-xs">{cert}</span>
                     ))}
                   </div>
@@ -59,8 +59,8 @@ export default function AboutSnippet() {
 
               {/* Floating stat card */}
               <div className="absolute -bottom-5 -right-5 bg-white rounded-2xl shadow-card-hover p-4 border border-sage-100">
-                <p className="text-2xl font-bold text-sage-700">1000+</p>
-                <p className="text-xs text-sage-500 font-medium">Happy Parents</p>
+                <p className="text-2xl font-bold text-sage-700">१०००+</p>
+                <p className="text-xs text-sage-500 font-medium">सुखी व समाधानी पालक</p>
               </div>
             </div>
           </div>
@@ -68,20 +68,17 @@ export default function AboutSnippet() {
           {/* Text side */}
           <div className="order-1 lg:order-2">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-sage-50 text-sage-600 rounded-full text-sm font-semibold mb-4 border border-sage-100">
-              ✨ About Your Coach
+              ✨ तुमच्या पॅरेंटिंग पार्टनरविषयी
             </div>
             <h2 className="section-title mb-5">
-              Meet Rupali — Your{' '}
-              <span className="gradient-text">Parenting Partner</span>
+              भेटा रुपाली मॅडमना —{' '}
+              <span className="gradient-text">तुमच्या पॅरентिंग पार्टनर</span>
             </h2>
             <p className="text-sage-600 leading-relaxed mb-5">
-              With 2+ years of experience coaching families across Maharashtra, Rupali blends 
-              practical wisdom with empathetic guidance to help parents break generational cycles and build 
-              deeply connected families.
+              महाराष्ट्रातील अनेक कुटुंबांना मार्गदर्शन करण्याचा २+ वर्षांचा अनुभव असलेल्या रुपाली मॅडम व्यावहारिक मार्गदर्शन आणि प्रेमाचा मेळ घालून पालकांना आपल्या मुलांशी घट्ट नाते जोडण्यास मदत करतात.
             </p>
             <p className="text-sage-600 leading-relaxed mb-8">
-              Her approach is rooted in the belief that when parents thrive, children flourish. Her courses 
-              and coaching have helped over 1000 happy parents create calmer, happier homes.
+              पालक आनंदी आणि समाधानी असतील तरच मुले प्रगती करतात, या विश्वासावर त्यांची पद्धत आधारित आहे. त्यांच्या कोर्सेसमुळे १००० हून अधिक पालकांनी आपल्या घरात शांतता व आनंदाचे वातावरण निर्माण केले आहे.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
@@ -94,7 +91,7 @@ export default function AboutSnippet() {
             </div>
 
             <Link href="/about" className="btn-primary">
-              Learn More About Me <ArrowRight className="w-4 h-4" />
+              माझ्याविषयी अधिक जाणून घ्या <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>

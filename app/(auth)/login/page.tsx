@@ -63,7 +63,7 @@ function LoginForm() {
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
       {/* Email */}
       <div>
-        <label className="label" htmlFor="email">Email Address</label>
+        <label className="label" htmlFor="email">ईमेल पत्ता</label>
         <div className="relative">
           <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-sage-400" />
           <input
@@ -81,9 +81,9 @@ function LoginForm() {
       {/* Password */}
       <div>
         <div className="flex items-center justify-between mb-1.5">
-          <label className="label mb-0" htmlFor="password">Password</label>
+          <label className="label mb-0" htmlFor="password">पासवर्ड</label>
           <Link href="/forgot-password" className="text-xs text-sage-500 hover:text-sage-700">
-            Forgot password?
+            पासवर्ड विसरलात?
           </Link>
         </div>
         <div className="relative">
@@ -116,7 +116,7 @@ function LoginForm() {
           <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
         ) : (
           <>
-            <LogIn className="w-4 h-4" /> Sign In
+            <LogIn className="w-4 h-4" /> लॉगिन करा
           </>
         )}
       </button>
@@ -136,12 +136,12 @@ export default function LoginPage() {
               <Leaf className="w-7 h-7 text-white" />
             </div>
             <h1 className="text-2xl font-bold text-sage-900" style={{ fontFamily: 'var(--font-playfair)' }}>
-              Welcome Back
+              पुन्हा स्वागत आहे!
             </h1>
-            <p className="text-sage-500 text-sm mt-1">Sign in to continue your journey</p>
+            <p className="text-sage-500 text-sm mt-1">तुमचा शिकण्याचा प्रवास सुरू ठेवण्यासाठी लॉगिन करा</p>
           </div>
 
-          <Suspense fallback={<div className="text-center py-8 text-sage-500 text-sm">Loading sign in...</div>}>
+          <Suspense fallback={<div className="text-center py-8 text-sage-500 text-sm">लोड होत आहे...</div>}>
             <LoginForm />
           </Suspense>
 
@@ -151,21 +151,21 @@ export default function LoginPage() {
               <div className="w-full border-t border-sage-100" />
             </div>
             <div className="relative flex justify-center">
-              <span className="bg-white px-3 text-xs text-sage-400">or</span>
+              <span className="bg-white px-3 text-xs text-sage-400">किंवा</span>
             </div>
           </div>
 
           <p className="text-center text-sm text-sage-600">
-            Don&apos;t have an account?{' '}
+            अजून खाते नाही?{' '}
             <Link href="/signup" className="font-semibold text-sage-600 hover:text-sage-800 underline underline-offset-2">
-              Create one free
+              नवीन खाते तयार करा
             </Link>
           </p>
         </div>
 
         {/* Trust */}
         <p className="text-center text-xs text-sage-400 mt-4">
-          🔒 Your data is secure and never shared
+          🔒 तुमची माहिती १००% सुरक्षित आहे
         </p>
       </div>
     </div>

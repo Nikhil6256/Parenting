@@ -10,11 +10,11 @@ import {
 } from 'lucide-react';
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/courses', label: 'Courses' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/', label: 'मुख्यपृष्ठ' },
+  { href: '/about', label: 'रुपालींविषयी' },
+  { href: '/courses', label: 'कोर्सेस' },
+  { href: '/blog', label: 'ब्लॉग' },
+  { href: '/contact', label: 'संपर्क' },
 ];
 
 export default function Navbar() {
@@ -113,7 +113,7 @@ export default function Navbar() {
                         className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-sage-700 hover:bg-sage-50 hover:text-sage-900 transition-colors"
                       >
                         <LayoutDashboard className="w-4 h-4" />
-                        Admin Dashboard
+                        ॲडमिन डॅशबोर्ड
                       </Link>
                     )}
                     <Link
@@ -122,7 +122,7 @@ export default function Navbar() {
                       className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-sage-700 hover:bg-sage-50 hover:text-sage-900 transition-colors"
                     >
                       <BookOpen className="w-4 h-4" />
-                      My Courses
+                      माझे कोर्सेस
                     </Link>
                     <Link
                       href="/profile"
@@ -130,7 +130,7 @@ export default function Navbar() {
                       className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-sage-700 hover:bg-sage-50 hover:text-sage-900 transition-colors"
                     >
                       <User className="w-4 h-4" />
-                      Profile
+                      प्रोफाईल
                     </Link>
                     <div className="border-t border-sage-100 mt-1 pt-1">
                       <button
@@ -138,7 +138,7 @@ export default function Navbar() {
                         className="flex items-center gap-2.5 w-full px-4 py-2.5 text-sm text-red-500 hover:bg-red-50 transition-colors"
                       >
                         <LogOut className="w-4 h-4" />
-                        Sign Out
+                        साइन आउट
                       </button>
                     </div>
                   </div>
@@ -146,8 +146,8 @@ export default function Navbar() {
               </div>
             ) : (
               <>
-                <Link href="/login" className="btn-ghost text-sm">Sign In</Link>
-                <Link href="/signup" className="btn-primary text-sm py-2.5 px-5">Get Started</Link>
+                <Link href="/login" className="btn-ghost text-sm">लॉगिन करा</Link>
+                <Link href="/signup" className="btn-primary text-sm py-2.5 px-5">सुरुवात करा</Link>
               </>
             )}
           </div>
@@ -184,23 +184,23 @@ export default function Navbar() {
                 <>
                   {session.user.role === 'owner' && (
                     <Link href="/admin" onClick={() => setIsOpen(false)} className="flex items-center gap-2 px-4 py-3 text-sm font-medium text-sage-700 hover:bg-sage-50 rounded-xl">
-                      <LayoutDashboard className="w-4 h-4" /> Admin Dashboard
+                      <LayoutDashboard className="w-4 h-4" /> ॲडमिन डॅशबोर्ड
                     </Link>
                   )}
                   <Link href="/my-courses" onClick={() => setIsOpen(false)} className="flex items-center gap-2 px-4 py-3 text-sm font-medium text-sage-700 hover:bg-sage-50 rounded-xl">
-                    <ShoppingBag className="w-4 h-4" /> My Courses
+                    <ShoppingBag className="w-4 h-4" /> माझे कोर्सेस
                   </Link>
                   <button
                     onClick={() => { signOut({ callbackUrl: '/' }); setIsOpen(false); }}
                     className="flex items-center gap-2 w-full px-4 py-3 text-sm font-medium text-red-500 hover:bg-red-50 rounded-xl"
                   >
-                    <LogOut className="w-4 h-4" /> Sign Out
+                    <LogOut className="w-4 h-4" /> साइन आउट
                   </button>
                 </>
               ) : (
                 <>
-                  <Link href="/login" onClick={() => setIsOpen(false)} className="block w-full btn-secondary text-center text-sm">Sign In</Link>
-                  <Link href="/signup" onClick={() => setIsOpen(false)} className="block w-full btn-primary text-center text-sm">Get Started</Link>
+                  <Link href="/login" onClick={() => setIsOpen(false)} className="block w-full btn-secondary text-center text-sm">लॉगिन करा</Link>
+                  <Link href="/signup" onClick={() => setIsOpen(false)} className="block w-full btn-primary text-center text-sm">सुरुवात करा</Link>
                 </>
               )}
             </div>

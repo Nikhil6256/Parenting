@@ -4,15 +4,15 @@ import Image from 'next/image';
 import { Award, Heart, BookOpen, Users } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About Rupali',
-  description: 'Learn about Rupali — parenting partner helping Indian families build stronger, happier connections.',
+  title: 'रुपालींविषयी - Rise With Rupali',
+  description: 'रुपाली मॅडमविषयी अधिक जाणून घ्या — महाराष्ट्रातील पालकांसाठी सोपे व प्रभावी मार्गदर्शन.',
 };
 
 const values = [
-  { icon: Heart, title: 'Compassion First', description: 'Every parent is doing their best. My approach begins with empathy, not judgment.' },
-  { icon: BookOpen, title: 'Evidence-Based', description: 'All strategies are rooted in developmental understanding and practical research.' },
-  { icon: Users, title: 'Cultural Sensitivity', description: 'I understand Indian family dynamics — joint families, academic pressure, and more.' },
-  { icon: Award, title: 'Practical Over Perfect', description: 'Real tools for real life, not idealistic advice that only works in textbooks.' },
+  { icon: Heart, title: 'सामंजस्य आणि प्रेम', description: 'प्रत्येक पालक आपल्या परीने सर्वोत्तम प्रयत्न करत असतो. माझी पद्धत ओरडण्याऐवजी प्रेमावर आधारित आहे.' },
+  { icon: BookOpen, title: 'व्यावहारिक ज्ञान', description: 'सर्व उपाय दैनंदिन आयुष्यातील अडचणींवर सहज अमलात आणता येण्याजोगे आहेत.' },
+  { icon: Users, title: 'संस्कृतीची जपणूक', description: 'आपल्या कौटुंबिक संस्कृती, एकत्र कुटुंब पद्धती आणि आव्हानांची मला पूर्ण माहिती आहे.' },
+  { icon: Award, title: 'सोपे व परिणामकारक', description: 'फक्त पुस्तकी उपदेश नाही, तर प्रत्यक्ष घरात अमलात आणता येतील असे सोपे मार्ग.' },
 ];
 
 export default function AboutPage() {
@@ -24,18 +24,17 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-sage-100 text-sage-700 rounded-full text-sm font-semibold mb-6">
-                👋 About Your Coach
+                👋 तुमच्या पॅरेंटिंग पार्टनरविषयी
               </div>
               <h1 className="section-title mb-5">
-                Hi, I&apos;m Rupali —{' '}
-                <span className="gradient-text">Your Parenting Partner</span>
+                नमस्ते, मी रुपाली —{' '}
+                <span className="gradient-text">तुमची पॅरेंटिंग पार्टनर</span>
               </h1>
               <p className="text-sage-600 text-lg leading-relaxed mb-6">
-                For 2+ years, I&apos;ve been helping families break cycles, build connection, 
-                and raise children who thrive — emotionally and academically.
+                मागील २+ वर्षांपासून मी पालकांना मुलांशी घट्ट नाते जोडण्यास आणि त्यांचे भावनिक व मानसिक संगोपन करण्यास मार्गदर्शन करत आहे.
               </p>
               <div className="flex flex-wrap gap-3">
-                {['Positive Parenting', 'Life Coaching', '2+ Years Experience'].map(cert => (
+                {['पॉझिटिव्ह पॅरेंटिंग', 'लाईफ कोचिंग', '२+ वर्षांचा अनुभव'].map(cert => (
                   <span key={cert} className="badge badge-green">{cert}</span>
                 ))}
               </div>
@@ -47,7 +46,7 @@ export default function AboutPage() {
                 <div className="relative w-full" style={{ aspectRatio: '3/4' }}>
                   <Image
                     src="/images/tutor/rupali-1.jpg"
-                    alt="Rupali — Parenting Partner & Life Coach"
+                    alt="रुपाली — पॅरेंटिंग पार्टनर आणि लाईफ कोच"
                     fill
                     priority
                     className="object-cover object-top"
@@ -55,12 +54,12 @@ export default function AboutPage() {
                   />
                 </div>
                 <div className="p-5 text-center">
-                  <h2 className="text-xl font-bold text-sage-900 mb-1" style={{ fontFamily: 'var(--font-playfair)' }}>Rupali</h2>
-                  <p className="text-sage-600 text-sm mb-4">Parenting &amp; Life Coach</p>
+                  <h2 className="text-xl font-bold text-sage-900 mb-1" style={{ fontFamily: 'var(--font-playfair)' }}>रुपाली</h2>
+                  <p className="text-sage-600 text-sm mb-4">पॅरेंटिंग पार्टनर आणि लाईफ कोच</p>
                   <div className="grid grid-cols-3 gap-3 text-center">
-                    <div><p className="text-2xl font-bold text-sage-700">2+</p><p className="text-xs text-sage-500">Years</p></div>
-                    <div><p className="text-2xl font-bold text-sage-700">1000</p><p className="text-xs text-sage-500">Parents</p></div>
-                    <div><p className="text-2xl font-bold text-sage-700">Expert</p><p className="text-xs text-sage-500">Courses</p></div>
+                    <div><p className="text-2xl font-bold text-sage-700">२+</p><p className="text-xs text-sage-500 font-medium">वर्षांचा अनुभव</p></div>
+                    <div><p className="text-2xl font-bold text-sage-700">१०००+</p><p className="text-xs text-sage-500 font-medium">सुखी पालक</p></div>
+                    <div><p className="text-2xl font-bold text-sage-700">उत्कृष्ट</p><p className="text-xs text-sage-500 font-medium">कोर्सेस</p></div>
                   </div>
                 </div>
               </div>
@@ -72,11 +71,11 @@ export default function AboutPage() {
       {/* My Story */}
       <section className="section bg-white">
         <div className="container-custom max-w-4xl">
-          <h2 className="section-title text-center mb-8">My Story</h2>
+          <h2 className="section-title text-center mb-8">माझा प्रवास</h2>
           <div className="prose-custom space-y-4 text-center mx-auto max-w-2xl">
-            <p>Growing up in a traditional household, I saw firsthand how unspoken expectations and harsh criticism could create distance between parents and children. I realised the real change needed to happen at home.</p>
-            <p>I started coaching families one-on-one. The transformation I witnessed — from yelling matches to heart-to-heart conversations — inspired me to reach more families through online courses.</p>
-            <p>Today, Rise With Rupali is a community of 1000 happy parents committed to breaking old patterns and building something beautiful with their children.</p>
+            <p>आपल्या समाजात बऱ्याचदा मुलांवर ओरडण्यामुळे आणि कटकटींमुळे पालक आणि मुलांमध्ये अंतर निर्माण होते, हे मी जवळून पाहिले. खरा आणि टिकाऊ बदल हा घरातूनच सुरू व्हायला हवा, याची मला जाणीव झाली.</p>
+            <p>मी पालकांना वैयक्तिक मार्गदर्शन करण्यास सुरुवात केली. ओरडण्याऐवजी घरात प्रेमळ संवाद सुरू झालेला पाहून मला अत्यंत आनंद झाला. यातूनच जास्तीत जास्त पालकांपर्यंत पोहोचण्यासाठी मी हे कोर्सेस तयार केले.</p>
+            <p>आज Rise With Rupali हा १००० हून अधिक समाधानी व आनंदी पालकांचा परिवार बनला आहे, जे आपल्या मुलांचे संगोपन अधिक प्रेमाने आणि विश्वासाने करत आहेत.</p>
           </div>
         </div>
       </section>
@@ -85,7 +84,7 @@ export default function AboutPage() {
       <section className="section bg-sage-50/50">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="section-title mb-4">What I Stand For</h2>
+            <h2 className="section-title mb-4">माझी विचारसरणी</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map(({ icon: Icon, title, description }) => (
@@ -104,13 +103,13 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="section bg-sage-50">
         <div className="container-custom text-center">
-          <h2 className="section-title mb-4">Ready to Start?</h2>
+          <h2 className="section-title mb-4">आजच सुरुवात करा!</h2>
           <p className="section-subtitle mx-auto mb-8">
-            Let&apos;s build the family life you&apos;ve always dreamed of — together.
+            चला, आपण एकत्र मिळून तुमच्या कुटुंबात प्रेमाचे आणि आनंदाचे वातावरण निर्माण करूया.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/courses" className="btn-primary">Browse All Courses</Link>
-            <Link href="/contact" className="btn-secondary">Contact Us</Link>
+            <Link href="/courses" className="btn-primary">सर्व कोर्सेस पहा</Link>
+            <Link href="/contact" className="btn-secondary">संपर्क साधा</Link>
           </div>
         </div>
       </section>

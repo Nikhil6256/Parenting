@@ -6,8 +6,8 @@ import type { Metadata } from 'next';
 import { defaultBlogPosts } from '@/lib/blogData';
 
 export const metadata: Metadata = {
-  title: 'Blog — Parenting Tips & Insights',
-  description: 'Expert parenting tips, child development insights, and heartful stories from Rupali\'s blog.',
+  title: 'ब्लॉग - Rise With Rupali',
+  description: 'पालकांसाठी उपयुक्त टीप्स, मार्गदर्शन आणि महत्त्वाचे लेख.',
 };
 
 async function getPosts() {
@@ -27,10 +27,10 @@ export default async function BlogPage() {
       <section className="pt-28 pb-12 bg-hero-gradient">
         <div className="container-custom text-center">
           <h1 className="section-title mb-4">
-            Parenting Wisdom,{' '}
-            <span className="gradient-text">Served with Love</span>
+            पॅरेंटिंग टिप्स व मार्गदर्शन,{' '}
+            <span className="gradient-text">मनापासून आणि प्रेमाने</span>
           </h1>
-          <p className="section-subtitle mx-auto">Practical tips, honest stories, and science-backed insights for modern Indian parents.</p>
+          <p className="section-subtitle mx-auto">पालकांसाठी उपयुक्त माहिती, सोपे उपाय आणि कौटुंबिक विश्वासाचे लेख.</p>
         </div>
       </section>
 
@@ -38,7 +38,7 @@ export default async function BlogPage() {
         <div className="container-custom">
           {displayPosts.length === 0 ? (
             <div className="text-center py-20 card p-10">
-              <p className="text-slate-500">Blog posts coming soon!</p>
+              <p className="text-slate-500">ब्लॉग लेख लवकरच येत आहेत!</p>
             </div>
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -64,14 +64,14 @@ export default async function BlogPage() {
                     <p className="text-slate-500 text-sm line-clamp-2 mb-4">{post.excerpt}</p>
                     <div className="flex items-center justify-between text-xs text-slate-400">
                       <div className="flex items-center gap-2">
-                        <span>By {post.author}</span>
+                        <span>लेखक: {post.author}</span>
                         <span>·</span>
-                        <span>{post.readingTime}m read</span>
+                        <span>{post.readingTime} मि वाचन</span>
                       </div>
                       <span>{formatDate(post.publishedAt || post.createdAt)}</span>
                     </div>
                     <Link href={`/blog/${post.slug}`} className="mt-4 inline-flex items-center gap-1 text-sage-600 text-sm font-semibold hover:text-sage-700 transition-colors">
-                      Read More →
+                      अधिक वाचा →
                     </Link>
                   </div>
                 </article>
